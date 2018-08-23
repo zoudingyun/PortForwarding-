@@ -132,16 +132,19 @@ namespace PortControllerServer
             TcpClient tc2 = ((TcpClient[])obj)[1];
             NetworkStream ns1 = tc1.GetStream();
             NetworkStream ns2 = tc2.GetStream();
-            long recount=0;
+            double start=0;
+            double end = 0;
+            Boolean overSpeed = false;
+            int overSpeedCount = 0;
             while (true)
             {
+                start = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
                 try
                 {
                     //这里必须try catch，否则连接一旦中断程序就崩溃了，要是弹出错误提示让机主看见那就囧了
                     byte[] bt = new byte[2048];
                     int count = ns1.Read(bt, 0, bt.Length);
                     ns2.Write(bt, 0, count);
-                    Console.WriteLine("re"+ (recount++));
                 }
                 catch(Exception ex)
                 {
@@ -150,6 +153,25 @@ namespace PortControllerServer
                     tc1.Close();
                     tc2.Close();
                     break;
+                }
+                end = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
+                if ((end-start)<=1)
+                {
+                    if (overSpeedCount >= 500) {
+                        return;//无效线程死循环达到500次自动退出
+                    }
+                    else
+                    {
+                        if (!overSpeed)
+                        {
+                            overSpeed = true;
+                            overSpeedCount = 1;
+                        }
+                        else
+                        {
+                            overSpeedCount++;
+                        }
+                    }
                 }
             }
             threadCount--;
