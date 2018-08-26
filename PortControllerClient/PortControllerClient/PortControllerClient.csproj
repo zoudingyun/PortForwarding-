@@ -73,6 +73,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\changeName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\changeName.Designer.cs">
+      <DependentUpon>changeName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\changePWD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\changePWD.Designer.cs">
+      <DependentUpon>changePWD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangeUserPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeUserPwd.Designer.cs">
+      <DependentUpon>ChangeUserPwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +109,15 @@
     <Compile Include="PublicVariable4CS.cs" />
     <Compile Include="Threads\LocalListenThread.cs" />
     <Compile Include="Threads\workThread.cs" />
+    <EmbeddedResource Include="Forms\changeName.resx">
+      <DependentUpon>changeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\changePWD.resx">
+      <DependentUpon>changePWD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeUserPwd.resx">
+      <DependentUpon>ChangeUserPwd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

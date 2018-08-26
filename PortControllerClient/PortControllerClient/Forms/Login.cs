@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,8 @@ namespace PortControllerClient.Forms
             PublicVariable4CS.ServerPort = int.Parse(this.serverPort.Text);
             PublicVariable4CS.SaveUser = this.saveUsername.Checked;
 
+            PublicVariable4CS.ver = 2.0;
+
             PublicVariable4CS.serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             IPAddress ip = IPAddress.Parse(PublicVariable4CS.ServerIP);
             IPEndPoint point = new IPEndPoint(ip, PublicVariable4CS.ServerPort);
@@ -62,40 +65,49 @@ namespace PortControllerClient.Forms
             try {
                 //绑定IP地址和端口号
                 PublicVariable4CS.serverSocket.Connect(point);
-                String s = "LOGIN|"+PublicVariable4CS.UserName + "|" + PublicVariable4CS.PassWord+"|"+"ver:1.2"+"\n";
+                Hashtable sendTable = new Hashtable();
+
+                sendTable.Add("VER",PublicVariable4CS.ver);
+                sendTable.Add("TYPE", "LOGIN");
+                sendTable.Add("USER", PublicVariable4CS.UserName);
+                sendTable.Add("PWD", PublicVariable4CS.PassWord);
+
 
                 //发送登录信息
-                PublicVariable4CS.serverSocket.Send(Encoding.UTF8.GetBytes(s));
+                PublicVariable4CS.serverSocket.Send(Encoding.UTF8.GetBytes(PublicVariable4CS.setMessages(sendTable)));
                 byte[] dat = new byte[2048];
 
                 String data = System.Text.Encoding.UTF8.GetString(dat, 0, PublicVariable4CS.serverSocket.Receive(dat));
-                //String[] datas = data.Split('★');
-                //data = datas[1];
-                if(data.IndexOf( @"LOGIN-RE|TRUE")>=0)
+                Hashtable getTable = PublicVariable4CS.getMessages(data);
+                if ((string)getTable["TYPE"]== "LOGIN-RE")
                 {
-                    String[] datas = data.Split('|');
-                    String[] userDesc = datas[2].Split(':');
-                    PublicVariable4CS.UserDesc = userDesc[1];
-                    PublicVariable4CS.login = true;
-                    this.Close();
-                }else if (data.IndexOf(@"LOGIN-RE|FALSE") >= 0)
-                {
-                    MessageBox.Show("登录失败，请核对密码！\n");
-                }
-                else if (data.IndexOf(@"LOGIN-RE|ERROR_USERNAME")>= 0)
-                {
-                    MessageBox.Show("用户不存在！\n");
+                    if ((string)getTable["RE_ANSWER"] == "TRUE")
+                    {
+                        PublicVariable4CS.UserDesc = (string)getTable["USERDESC"];
+                        PublicVariable4CS.INHERIT = (string)getTable["INHERIT"];
+                        PublicVariable4CS.login = true;
+                        this.Close();
+                    }
+                    else if ((string)getTable["RE_ANSWER"] == "FALSE")
+                    {
+                        MessageBox.Show("登陆失败："+ (string)getTable["RE_MESSAGE"]);
+                    }
+                    else
+                    {
+                        String a = "服务器响应异常！" + data;
+                        PublicVariable4CS.errorMessage(a);
+                    }
+
                 }
                 else
                 {
-                    String a = "服务器响应异常！" + data;
-                    MessageBox.Show(a);
+                    PublicVariable4CS.errorMessage("答复类型错误："+ (string)getTable["TYPE"]);
                 }
 
             }
             catch(Exception ex)
             {
-                MessageBox.Show("服务器连接错误,请检查服务器地址是否正确，并保证网络连接正常！\n" + ex);
+                PublicVariable4CS.errorMessage("服务器连接错误,请检查服务器地址是否正确，并保证网络连接正常！\n" + ex);
             }
             ;
         }

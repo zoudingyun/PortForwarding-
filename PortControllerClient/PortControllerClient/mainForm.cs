@@ -14,6 +14,7 @@ using PortControllerClient.Threads;
 using fileTools;
 using System.IO;
 using System.Diagnostics;
+using System.Collections;
 
 namespace PortControllerClient
 {
@@ -60,6 +61,15 @@ namespace PortControllerClient
             startPort.BackColor = Color.Transparent;
 
             this.toolStripMenuItem2.Text = "开启端口映射";
+
+            if(PublicVariable4CS.INHERIT == "ADMIN")
+            {
+                this.adminBox.Visible = false;
+            }
+            else
+            {
+                this.adminBox.Visible = false;
+            }
 
             /*this.portList.Rows.Add();
 
@@ -168,40 +178,56 @@ namespace PortControllerClient
                 {
                     try
                     {
+                        Hashtable sendTable = new Hashtable();
                         tl.Start();
                         TcpClient tc1 = tl.AcceptTcpClient();//这里是等待数据再执行下边，不会100%占用cpu
                         TcpClient tc2 = new TcpClient(PublicVariable4CS.ServerIP, PublicVariable4CS.ServerPort);
 
                         NetworkStream ns2 = tc2.GetStream();
-                        String sendStr = "CONNECT|" + PublicVariable4CS.UserName + "|" + PublicVariable4CS.PassWord + "|" + remoteAddress + "\n";
+                        sendTable.Add("VER", PublicVariable4CS.ver);
+                        sendTable.Add("TYPE", "CONNECT");
+                        sendTable.Add("USER", PublicVariable4CS.UserName);
+                        sendTable.Add("PWD", PublicVariable4CS.PassWord);
 
-                        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(sendStr);
+                        string[] tmp = remoteAddress.Split(':');
+
+                        sendTable.Add("TOTAL_IP", tmp[0]);
+                        sendTable.Add("TOTAL_PORT", tmp[1]);
+
+                        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(PublicVariable4CS.setMessages(sendTable));
                         ns2.Write(byteArray, 0, byteArray.Length);
 
                         byte[] bt = new byte[10240];
                         int count = ns2.Read(bt, 0, bt.Length);
 
                         string reMessage = System.Text.Encoding.UTF8.GetString(bt);
-
-                        if(reMessage.IndexOf(@"CONNECT-RE|TRUE") >= 0)
-                        {
-                            object obj1 = (object)(new TcpClient[] { tc1, tc2 });
-                            object obj2 = (object)(new TcpClient[] { tc2, tc1 });
-                            ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj1);
-                            ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj2);
-                        }
-                        else if(reMessage.IndexOf(@"CONNECT-RE|FALSE") >= 0)
-                        {
-                            String[] tmpDatas = reMessage.Split('|');
-                            MessageBox.Show("端口转发被拒绝：" + tmpDatas[2]);
+                        Hashtable reMesTable = PublicVariable4CS.getMessages(reMessage);
+                        if((string)reMesTable["TYPE"]=="CONNECT-RE")
+                        { 
+                            if((string)reMesTable["RE_ANSWER"]=="TRUE")
+                            {
+                                object obj1 = (object)(new TcpClient[] { tc1, tc2 });
+                                object obj2 = (object)(new TcpClient[] { tc2, tc1 });
+                                ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj1);
+                                ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj2);
+                            }
+                            else if((string)reMesTable["RE_ANSWER"] == "FALSE")
+                            {
+                                PublicVariable4CS.errorMessage("端口转发被拒绝：" + (string)reMesTable["RE_MESSAGE"]);
+                            }
+                            else
+                            {
+                                throw new Exception("服务器反馈数据异常！");
+                            }
                         }
                         else
                         {
-                            throw new Exception("服务器反馈数据异常！");
+                            PublicVariable4CS.errorMessage("错误的返回类型"+(string)reMesTable["TYPE"]);
                         }
-                    }catch(Exception ex)
+                    }
+                    catch(Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        PublicVariable4CS.errorMessage(ex.ToString());
                     }
 
 
@@ -246,16 +272,17 @@ namespace PortControllerClient
             while (true)
             {
                 start = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
+                int count = 0;
                 try
                 {
                     //这里必须try catch，否则连接一旦中断程序就崩溃了，要是弹出错误提示让机主看见那就囧了
                     byte[] bt = new byte[30720000];
-                    int count = ns1.Read(bt, 0, bt.Length);
+                    count = ns1.Read(bt, 0, bt.Length);
                     ns2.Write(bt, 0, count);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("子线程异常："+ex.ToString());
+                    Console.WriteLine(ex.ToString());
                     ns1.Dispose();
                     ns2.Dispose();
                     tc1.Close();
@@ -263,11 +290,11 @@ namespace PortControllerClient
                     break;
                 }
                 end = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
-                if ((end - start) <= 1)
+                if ((end - start) <= 1 || count == 0)
                 {
                     if (overSpeedCount >= 500)
                     {
-                        return;//无效线程死循环达到500次自动退出
+                        break;//无效线程死循环达到500次自动退出
                     }
                     else
                     {
@@ -283,6 +310,7 @@ namespace PortControllerClient
                     }
                 }
             }
+            overSpeedCount--;
         }
 
         private static int updateHosts(string key)
@@ -495,11 +523,65 @@ namespace PortControllerClient
             this.Show();
         }
 
+        /// <summary>
+        /// 表格右键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try { 
             int index = this.portList.CurrentCell.RowIndex;
             DataGridViewRow row = portList.Rows[index];
             this.portList.Rows.Remove(row);
+            }
+            catch
+            {
+
+            }
+        }
+
+        /// <summary>
+        /// 修改密码窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            changePWD changePwd = new changePWD();
+            changePwd.ShowDialog();
+        }
+
+        /// <summary>
+        /// 修改用户描述
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button4_Click(object sender, EventArgs e)
+        {
+            changeName changename = new changeName();
+            changename.ShowDialog();
+        }
+
+        /// <summary>
+        /// 重置用户密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ChangeUserPwd changeUserPwd = new ChangeUserPwd();
+            changeUserPwd.ShowDialog();
+        }
+
+        /// <summary>
+        /// 增加用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

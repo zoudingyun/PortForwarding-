@@ -39,19 +39,29 @@ namespace PortControllerClient
             this.localPort = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.targetPort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startPort = new System.Windows.Forms.Button();
             this.addPort = new System.Windows.Forms.Button();
             this.deletePort = new System.Windows.Forms.Button();
             this.mainLogo = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.userBox = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.adminBox = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.portList)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
+            this.userBox.SuspendLayout();
+            this.adminBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -70,6 +80,7 @@ namespace PortControllerClient
             // 
             // portList
             // 
+            this.portList.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.portList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.portList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.portList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -102,6 +113,20 @@ namespace PortControllerClient
             resources.ApplyResources(this.targetPort, "targetPort");
             this.targetPort.Name = "targetPort";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // ToolStripMenuItem
+            // 
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            resources.ApplyResources(this.ToolStripMenuItem, "ToolStripMenuItem");
+            this.ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
             // startPort
             // 
             resources.ApplyResources(this.startPort, "startPort");
@@ -131,20 +156,6 @@ namespace PortControllerClient
             resources.ApplyResources(this.mainLogo, "mainLogo");
             this.mainLogo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainLogo_MouseDoubleClick);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // ToolStripMenuItem
-            // 
-            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
-            resources.ApplyResources(this.ToolStripMenuItem, "ToolStripMenuItem");
-            this.ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -171,11 +182,79 @@ namespace PortControllerClient
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // userBox
+            // 
+            this.userBox.BackColor = System.Drawing.Color.Transparent;
+            this.userBox.Controls.Add(this.button4);
+            this.userBox.Controls.Add(this.button1);
+            resources.ApplyResources(this.userBox, "userBox");
+            this.userBox.Name = "userBox";
+            this.userBox.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // adminBox
+            // 
+            this.adminBox.BackColor = System.Drawing.Color.Transparent;
+            this.adminBox.Controls.Add(this.button2);
+            this.adminBox.Controls.Add(this.button5);
+            this.adminBox.Controls.Add(this.button6);
+            this.adminBox.Controls.Add(this.button7);
+            resources.ApplyResources(this.adminBox, "adminBox");
+            this.adminBox.Name = "adminBox";
+            this.adminBox.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button5, "button5");
+            this.button5.Name = "button5";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button6, "button6");
+            this.button6.Name = "button6";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button7, "button7");
+            this.button7.Name = "button7";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // mainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Controls.Add(this.adminBox);
+            this.Controls.Add(this.userBox);
             this.Controls.Add(this.deletePort);
             this.Controls.Add(this.addPort);
             this.Controls.Add(this.startPort);
@@ -188,6 +267,8 @@ namespace PortControllerClient
             ((System.ComponentModel.ISupportInitialize)(this.portList)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
+            this.userBox.ResumeLayout(false);
+            this.adminBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +294,14 @@ namespace PortControllerClient
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox userBox;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox adminBox;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button2;
     }
 }
 
