@@ -62,7 +62,7 @@ namespace PortControllerClient.Forms
             try {
                 //绑定IP地址和端口号
                 PublicVariable4CS.serverSocket.Connect(point);
-                String s = "LOGIN|"+PublicVariable4CS.UserName + "|" + PublicVariable4CS.PassWord+"|"+"ver:1.1"+"\n";
+                String s = "LOGIN|"+PublicVariable4CS.UserName + "|" + PublicVariable4CS.PassWord+"|"+"ver:1.2"+"\n";
 
                 //发送登录信息
                 PublicVariable4CS.serverSocket.Send(Encoding.UTF8.GetBytes(s));
