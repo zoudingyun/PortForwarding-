@@ -20,3 +20,6 @@ C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClie
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.exe
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.pdb
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.csprojAssemblyReference.cache
+C:\Pro\C#\PortControllerClient\PortControllerClient\bin\Debug\zh-Hans\PortControllerClient.resources.dll
+C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.mainForm.zh-Hans.resources
+C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\zh-Hans\PortControllerClient.resources.dll

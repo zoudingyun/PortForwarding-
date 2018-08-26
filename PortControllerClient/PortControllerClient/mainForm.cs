@@ -55,6 +55,12 @@ namespace PortControllerClient
 
             }
 
+            label1.BackColor = Color.Transparent;
+            userDesc.BackColor = Color.Transparent;
+            startPort.BackColor = Color.Transparent;
+
+            this.toolStripMenuItem2.Text = "开启端口映射";
+
             /*this.portList.Rows.Add();
 
 
@@ -71,11 +77,14 @@ namespace PortControllerClient
             if (PublicVariable4CS.portOpen)
             {
                 PublicVariable4CS.portOpen = !PublicVariable4CS.portOpen;
-                this.startPort.Visible = false;
+                this.toolStripMenuItem2.Text = "开启端口映射";
+
+                //this.startPort.Visible = false;
             }
             else
             {
                 PublicVariable4CS.portOpen = !PublicVariable4CS.portOpen;
+                this.toolStripMenuItem2.Text = "停止端口映射";
                 this.startPort.Visible = false;
 
 
@@ -212,50 +221,10 @@ namespace PortControllerClient
         /// <param name="e"></param>
         private void addPort_Click(object sender, EventArgs e)
         {
-            Socket clientSocketForUser = PublicVariable4CS.clientSocketForUser;
-            String clientSocketForServer = PublicVariable4CS.targetAddr;
-            PublicVariable4CS.clientSocketLocked = false;
-
-                try
-                {
-
-
-                    TcpListener tl = new TcpListener(10000);
-                    tl.Start();
-                    while (true) { 
-
-
-                   
-                        TcpClient tc1 = tl.AcceptTcpClient();//这里是等待数据再执行下边，不会100%占用cpu
-                        //TcpClient tc2 = new TcpClient("172.30.200.50", 3389);
-                        TcpClient tc2 = new TcpClient("127.0.0.1", 10002);
-                        String s = "CONNECT|" + "zdy" + "|" + "dlam520313" + "|" + "172.30.200.51:3389" + "\n";
-                        byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(s);
-                        NetworkStream ns2 = tc2.GetStream();
-                        ns2.Write(byteArray, 0, byteArray.Length);
-
-                        byte[] bt = new byte[10240];
-                        int count = ns2.Read(bt, 0, bt.Length);
-
-                        string str = System.Text.Encoding.UTF8.GetString(bt);
-
-
-                        object obj1 = (object)(new TcpClient[] { tc1, tc2 });
-                        object obj2 = (object)(new TcpClient[] { tc2, tc1 });
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj1);
-                        ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj2);
-
-
-                    }
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            
-
+            if (MessageBox.Show("确认退出？\n可以点击右上角最小化按钮隐藏到系统托盘！", "", MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
 
@@ -446,11 +415,91 @@ namespace PortControllerClient
 
         }
 
+        Point mouseOff;//鼠标移动位置变量
+        bool leftFlag;//标签是否为左键
+
+
         private void mainForm_Load(object sender, EventArgs e)
+        {
+            this.MouseDown += new MouseEventHandler(Form1_MouseDown);
+            this.MouseMove += new MouseEventHandler(Form1_MouseMove);
+            this.MouseUp += new MouseEventHandler(Form1_MouseUp);
+        }
+
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseOff = new Point(-e.X, -e.Y); //得到变量的值
+                leftFlag = true;                  //点击左键按下时标注为true;
+            }
+        }
+
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (leftFlag)
+            {
+                Point mouseSet = Control.MousePosition;
+                mouseSet.Offset(mouseOff.X, mouseOff.Y);  //设置移动后的位置
+                Location = mouseSet;
+            }
+        }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (leftFlag)
+            {
+                leftFlag = false;//释放鼠标后标注为false;
+            }
+        }
+
+        private void deletePort_Click(object sender, EventArgs e)
+        {
+            this.mainLogo.Visible = true;    //显示托盘图标
+            this.Hide();    //隐藏窗口
+        }
+
+        private void mainLogo_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
         }
 
-       
+
+        object sender1 = null;
+        EventArgs e1 = null;
+        /// <summary>
+        /// 图标右键菜单：退出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            
+            addPort_Click(sender1, e1);
+        }
+
+        /// <summary>
+        /// 图标右键菜单：显示主界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int index = this.portList.CurrentCell.RowIndex;
+            DataGridViewRow row = portList.Rows[index];
+            this.portList.Rows.Remove(row);
+        }
     }
 }

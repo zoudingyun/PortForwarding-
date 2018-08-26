@@ -30,6 +30,7 @@ namespace PortControllerClient
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.label1 = new System.Windows.Forms.Label();
             this.userDesc = new System.Windows.Forms.Label();
@@ -41,114 +42,152 @@ namespace PortControllerClient
             this.startPort = new System.Windows.Forms.Button();
             this.addPort = new System.Windows.Forms.Button();
             this.deletePort = new System.Windows.Forms.Button();
+            this.mainLogo = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.portList)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.AliceBlue;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "欢迎你：";
             // 
             // userDesc
             // 
-            this.userDesc.AutoSize = true;
+            resources.ApplyResources(this.userDesc, "userDesc");
             this.userDesc.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userDesc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.userDesc.Location = new System.Drawing.Point(76, 24);
+            this.userDesc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.userDesc.Name = "userDesc";
-            this.userDesc.Size = new System.Drawing.Size(17, 12);
-            this.userDesc.TabIndex = 1;
-            this.userDesc.Text = "<>";
             // 
             // portList
             // 
+            this.portList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.portList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.portList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.localAddress,
             this.localPort,
             this.targetAddress,
             this.targetPort});
-            this.portList.Location = new System.Drawing.Point(15, 52);
+            this.portList.ContextMenuStrip = this.contextMenuStrip1;
+            resources.ApplyResources(this.portList, "portList");
             this.portList.Name = "portList";
             this.portList.RowTemplate.Height = 27;
-            this.portList.Size = new System.Drawing.Size(445, 488);
-            this.portList.TabIndex = 2;
             // 
             // localAddress
             // 
-            this.localAddress.HeaderText = "代理地址";
+            resources.ApplyResources(this.localAddress, "localAddress");
             this.localAddress.Name = "localAddress";
             // 
             // localPort
             // 
-            this.localPort.HeaderText = "代理端口";
+            resources.ApplyResources(this.localPort, "localPort");
             this.localPort.Name = "localPort";
             // 
             // targetAddress
             // 
-            this.targetAddress.HeaderText = "目的地址";
+            resources.ApplyResources(this.targetAddress, "targetAddress");
             this.targetAddress.Name = "targetAddress";
             // 
             // targetPort
             // 
-            this.targetPort.HeaderText = "目的端口";
+            resources.ApplyResources(this.targetPort, "targetPort");
             this.targetPort.Name = "targetPort";
             // 
             // startPort
             // 
-            this.startPort.Location = new System.Drawing.Point(466, 508);
+            resources.ApplyResources(this.startPort, "startPort");
             this.startPort.Name = "startPort";
-            this.startPort.Size = new System.Drawing.Size(100, 32);
-            this.startPort.TabIndex = 3;
-            this.startPort.Text = "启动";
             this.startPort.UseVisualStyleBackColor = true;
             this.startPort.Click += new System.EventHandler(this.startPort_Click);
             // 
             // addPort
             // 
-            this.addPort.Location = new System.Drawing.Point(466, 52);
+            this.addPort.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.addPort, "addPort");
             this.addPort.Name = "addPort";
-            this.addPort.Size = new System.Drawing.Size(100, 32);
-            this.addPort.TabIndex = 4;
-            this.addPort.Text = "增加";
-            this.addPort.UseVisualStyleBackColor = true;
-            this.addPort.Visible = false;
+            this.addPort.UseVisualStyleBackColor = false;
             this.addPort.Click += new System.EventHandler(this.addPort_Click);
             // 
             // deletePort
             // 
-            this.deletePort.Location = new System.Drawing.Point(466, 99);
+            this.deletePort.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.deletePort, "deletePort");
             this.deletePort.Name = "deletePort";
-            this.deletePort.Size = new System.Drawing.Size(100, 32);
-            this.deletePort.TabIndex = 5;
-            this.deletePort.Text = "删除";
-            this.deletePort.UseVisualStyleBackColor = true;
-            this.deletePort.Visible = false;
+            this.deletePort.UseVisualStyleBackColor = false;
+            this.deletePort.Click += new System.EventHandler(this.deletePort_Click);
+            // 
+            // mainLogo
+            // 
+            this.mainLogo.ContextMenuStrip = this.contextMenuStrip2;
+            resources.ApplyResources(this.mainLogo, "mainLogo");
+            this.mainLogo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mainLogo_MouseDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // ToolStripMenuItem
+            // 
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            resources.ApplyResources(this.ToolStripMenuItem, "ToolStripMenuItem");
+            this.ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            resources.ApplyResources(this.contextMenuStrip2, "contextMenuStrip2");
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // mainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(570, 552);
             this.Controls.Add(this.deletePort);
             this.Controls.Add(this.addPort);
             this.Controls.Add(this.startPort);
             this.Controls.Add(this.portList);
             this.Controls.Add(this.userDesc);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("仿宋", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "mainForm";
-            this.Text = "端口转发控制台";
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.portList)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +206,13 @@ namespace PortControllerClient
         private System.Windows.Forms.Button startPort;
         private System.Windows.Forms.Button addPort;
         private System.Windows.Forms.Button deletePort;
+        private System.Windows.Forms.NotifyIcon mainLogo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 
