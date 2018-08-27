@@ -1,0 +1,9 @@
+C:\Pro\C#\PortControllerServer\bin\Debug\PortControllerServer.exe
+C:\Pro\C#\PortControllerServer\bin\Debug\PortControllerServer.pdb
+C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.csproj.CoreCompileInputs.cache
+C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.exe
+C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.pdb
+C:\Pro\C#\PortControllerServer\bin\Debug\PortControllerServer.exe.config
+C:\Pro\C#\PortControllerServer\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.csproj.CopyComplete
+C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.csprojAssemblyReference.cache
