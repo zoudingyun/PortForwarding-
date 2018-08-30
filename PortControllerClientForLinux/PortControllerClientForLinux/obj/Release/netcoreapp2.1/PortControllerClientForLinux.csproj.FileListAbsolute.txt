@@ -1,0 +1,11 @@
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\bin\Release\netcoreapp2.1\PortControllerClientForLinux.deps.json
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\bin\Release\netcoreapp2.1\PortControllerClientForLinux.runtimeconfig.json
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\bin\Release\netcoreapp2.1\PortControllerClientForLinux.runtimeconfig.dev.json
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\bin\Release\netcoreapp2.1\PortControllerClientForLinux.dll
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\bin\Release\netcoreapp2.1\PortControllerClientForLinux.pdb
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.csproj.CoreCompileInputs.cache
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.AssemblyInfoInputs.cache
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.AssemblyInfo.cs
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.dll
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.pdb
+C:\Pro\C#\PortControllerClientForLinux\PortControllerClientForLinux\obj\Release\netcoreapp2.1\PortControllerClientForLinux.csprojAssemblyReference.cache
