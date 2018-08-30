@@ -34,7 +34,7 @@ namespace PortControllerClient
                 Environment.Exit(0);
             }
 
-            string link_str = INIhelp.GetValue("link");
+            string link_str = INIhelp.GetValue("link");//读取历史转发记录并自动填写
             if (link_str.Length > 0)
             {
                 string[] links = link_str.Split('|');
