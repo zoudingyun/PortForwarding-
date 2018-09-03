@@ -34,7 +34,12 @@ namespace PortControllerClient
                 Environment.Exit(0);
             }
 
-            string link_str = INIhelp.GetValue("link");//读取历史转发记录并自动填写
+
+
+
+
+
+        string link_str = INIhelp.GetValue("link");//读取历史转发记录并自动填写
             if (link_str.Length > 0)
             {
                 string[] links = link_str.Split('|');
@@ -81,7 +86,11 @@ namespace PortControllerClient
             dgvr.Cells[3].Value = "直接添加一行";*/
         }
 
-
+        /// <summary>
+        /// 启动服务
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void startPort_Click(object sender, EventArgs e)
         {
             if (PublicVariable4CS.portOpen)
@@ -155,7 +164,14 @@ namespace PortControllerClient
                         }
 
                     }
-                    updateHosts(host);
+                    if (PublicVariable4CS.UAC)
+                    { 
+                        updateHosts(host);
+                    }
+                    else
+                    {
+                        MessageBox.Show("权限不足，代理地址无法使用，请使用127.0.0.1加代理端口号进行端口转发");
+                    }
                     INIhelp.SetValue("link", links);
 
                 }

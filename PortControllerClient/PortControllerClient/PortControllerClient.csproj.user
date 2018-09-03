@@ -2,9 +2,9 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
-    <InstallUrlHistory />
-    <SupportUrlHistory />
+    <PublishUrlHistory>C:\Pro\bin\PortControllerClient\|publish\</PublishUrlHistory>
+    <InstallUrlHistory>http://10.80.48.144:8008/</InstallUrlHistory>
+    <SupportUrlHistory>https://www.baidu.com</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />

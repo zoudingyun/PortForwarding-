@@ -16,6 +16,7 @@ namespace PortControllerClient
         public static String UserDesc;
         public static String PassWord;
         public static String INHERIT;//身份（是否是管理员）
+        public static Boolean UAC =true;//是否获取到了管理员权限
         public static String ServerIP;
         public static double ver;
         public static int ServerPort;

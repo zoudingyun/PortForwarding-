@@ -17,8 +17,8 @@ namespace fileTools
         //ini文件名称
         private static string inifilename = "portConfig.ini";
         //获取ini文件路径
-        //private static string inifilepath = Directory.GetCurrentDirectory() + "\\" + inifilename;
-        private static string inifilepath = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +"\\" + inifilename;
+        private static string inifilepath = Directory.GetCurrentDirectory() + "\\" + inifilename;
+        //private static string inifilepath = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +"\\" + inifilename;
 
             //1.创建文件流
         
