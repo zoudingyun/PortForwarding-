@@ -277,56 +277,63 @@ namespace PortControllerClient
         /// </summary>
         public static void transfer(object obj)
         {
-            TcpClient tc1 = ((TcpClient[])obj)[0];
-            TcpClient tc2 = ((TcpClient[])obj)[1];
-            NetworkStream ns1 = tc1.GetStream();
-            NetworkStream ns2 = tc2.GetStream();
-            double start = 0;
-            double end = 0;
-            Boolean overSpeed = false;
-            int overSpeedCount = 0;
-            while (true)
+            try
             {
-                start = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
-                int count = 0;
-                try
+                TcpClient tc1 = ((TcpClient[])obj)[0];
+                TcpClient tc2 = ((TcpClient[])obj)[1];
+                NetworkStream ns1 = tc1.GetStream();
+                NetworkStream ns2 = tc2.GetStream();
+                double start = 0;
+                double end = 0;
+                Boolean overSpeed = false;
+                int overSpeedCount = 0;
+                while (true)
                 {
-                    //这里必须try catch，否则连接一旦中断程序就崩溃了，要是弹出错误提示让机主看见那就囧了
-                    byte[] bt = new byte[30720000];
-                    count = ns1.Read(bt, 0, bt.Length);
-                    ns2.Write(bt, 0, count);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                    ns1.Dispose();
-                    ns2.Dispose();
-                    tc1.Close();
-                    tc2.Close();
-                    break;
-                }
-                end = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
-                if ((end - start) <= 1 || count == 0)
-                {
-                    if (overSpeedCount >= 500)
+                    start = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
+                    int count = 0;
+                    try
                     {
-                        break;//无效线程死循环达到500次自动退出
+                        //这里必须try catch，否则连接一旦中断程序就崩溃了，要是弹出错误提示让机主看见那就囧了
+                        byte[] bt = new byte[30720000];
+                        count = ns1.Read(bt, 0, bt.Length);
+                        ns2.Write(bt, 0, count);
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (!overSpeed)
+                        Console.WriteLine(ex.ToString());
+                        ns1.Dispose();
+                        ns2.Dispose();
+                        tc1.Close();
+                        tc2.Close();
+                        break;
+                    }
+                    end = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
+                    if ((end - start) <= 1 || count == 0)
+                    {
+                        if (overSpeedCount >= 500)
                         {
-                            overSpeed = true;
-                            overSpeedCount = 1;
+                            break;//无效线程死循环达到500次自动退出
                         }
                         else
                         {
-                            overSpeedCount++;
+                            if (!overSpeed)
+                            {
+                                overSpeed = true;
+                                overSpeedCount = 1;
+                            }
+                            else
+                            {
+                                overSpeedCount++;
+                            }
                         }
                     }
                 }
+                overSpeedCount--;
             }
-            overSpeedCount--;
+            catch 
+            {
+
+            }
         }
 
         private static int updateHosts(string key)
