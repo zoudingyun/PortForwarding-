@@ -19,6 +19,9 @@ C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClie
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.csproj.CoreCompileInputs.cache
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.exe
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.pdb
+C:\Pro\C#\PortControllerClient\PortControllerClient\bin\Debug\zh-Hans\PortControllerClient.resources.dll
+C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.mainForm.zh-Hans.resources
+C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\zh-Hans\PortControllerClient.resources.dll
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.Forms.changePWD.resources
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.Forms.changeName.resources
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.Forms.ChangeUserPwd.resources
@@ -27,6 +30,3 @@ C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClie
 C:\Pro\C#\PortControllerClient\PortControllerClient\bin\Debug\PortControllerClient.exe.manifest
 C:\Pro\C#\PortControllerClient\PortControllerClient\bin\Debug\PortControllerClient.application
 C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.application
-C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\Interop.IWshRuntimeLibrary.dll
-C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.csproj.ResolveComReference.cache
-C:\Pro\C#\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.csprojAssemblyReference.cache

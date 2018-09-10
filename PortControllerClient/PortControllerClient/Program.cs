@@ -1,8 +1,5 @@
-﻿using fileTools;
-using IWshRuntimeLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,31 +13,7 @@ namespace PortControllerClient
         [STAThread]
         static void Main(string[] Args)
         {
-            /*首次启动创建快捷方式*/
-            if (INIhelp.GetValue("isink") != "ture")
-            {
-                string DesktopPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);//得到桌面文件夹
-                WshShell shell = new WshShell();
-                IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(DesktopPath + "\\假HIA.lnk");
-                shortcut.TargetPath = Directory.GetCurrentDirectory()+ @"\\PortControllerClient.exe";
-                shortcut.Arguments = "";// 参数
 
-                shortcut.Description = "老木湿沙壁，暮幽萧寂寂";
-
-                shortcut.WorkingDirectory = Directory.GetCurrentDirectory();//程序所在文件夹，在快捷方式图标点击右键可以看到此属性
-
-                //shortcut.IconLocation = @"D:\software\cmpc\zy.exe,0";//图标
-
-                shortcut.Hotkey = "CTRL+SHIFT+Z";//热键
-
-                shortcut.WindowStyle = 1;
-
-                shortcut.Save();
-
-                INIhelp.SetValue("isink", "ture");
-            }
-
-            /*是否重复打开*/
             System.Diagnostics.Process[] myProcesses = System.Diagnostics.Process.GetProcessesByName("PortControllerClient");//获取指定的进程名   
             if (myProcesses.Length > 1) //如果可以获取到知道的进程名则说明已经启动
             {
