@@ -16,6 +16,7 @@ namespace PortControllerServer
     class Program
     {
         static int threadCount = 0;
+        static long bits = 0;
         static void Main(string[] args)
         {
             int serverPort = int.Parse(INIhelp.GetValue("port"));
@@ -151,14 +152,29 @@ namespace PortControllerServer
                                 try
                                 {
                                     TcpClient tc2 = new TcpClient((string)message["TOTAL_IP"], int.Parse((string)message["TOTAL_PORT"]));
+                                    ThreadMessage threadMessage1 = new ThreadMessage();
+                                    ThreadMessage threadMessage2 = new ThreadMessage();
+                                    threadMessage1.TOTAL_IP = (string)message["TOTAL_IP"];
+                                    threadMessage2.TOTAL_IP = (string)message["TOTAL_IP"];
+                                    threadMessage1.TOTAL_PORT = (string)message["TOTAL_PORT"];
+                                    threadMessage2.TOTAL_PORT = (string)message["TOTAL_PORT"];
 
                                     reMessage.Add("TYPE", "CONNECT-RE");
                                     reMessage.Add("RE_ANSWER", "TRUE");
                                     byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(setMessages(reMessage));
                                     ns1.Write(byteArray, 0, byteArray.Length);
 
-                                    object obj1 = (object)(new TcpClient[] { tc1, tc2 });
-                                    object obj2 = (object)(new TcpClient[] { tc2, tc1 });
+                                    
+                                    threadMessage1.tc1 = tc1;
+                                    threadMessage1.tc2 = tc2;
+                                    threadMessage2.tc1 = tc2;
+                                    threadMessage2.tc2 = tc1;
+                                    threadMessage1.type = "user";
+                                    threadMessage2.type = "target";
+                                    //object obj1 = (object)(new TcpClient[] { tc1, tc2 });
+                                    //object obj2 = (object)(new TcpClient[] { tc2, tc1 });
+                                    object obj1 = (object)threadMessage1;
+                                    object obj2 = (object)threadMessage2;
                                     ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj1);
                                     ThreadPool.QueueUserWorkItem(new WaitCallback(transfer), obj2);
                                 }
@@ -356,11 +372,14 @@ namespace PortControllerServer
         /// </summary>
         public static void transfer(object obj)
         {
+            ThreadMessage threadMessage = (ThreadMessage)obj;
             try
             {
                 threadCount++;
-                TcpClient tc1 = ((TcpClient[])obj)[0];
-                TcpClient tc2 = ((TcpClient[])obj)[1];
+                //TcpClient tc1 = ((TcpClient[])obj)[0];
+                //TcpClient tc2 = ((TcpClient[])obj)[1];
+                TcpClient tc1 = threadMessage.tc1;
+                TcpClient tc2 = threadMessage.tc2;
                 NetworkStream ns1 = tc1.GetStream();
                 NetworkStream ns2 = tc2.GetStream();
                 double start = 0;
@@ -371,26 +390,37 @@ namespace PortControllerServer
                 {
                     start = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
                     int count = 0;
+                    byte[] bt = new byte[3000000];
+
+                    System.DateTime currentTime = new System.DateTime();
+                    currentTime = System.DateTime.Now;
+                    string strY = currentTime.ToString();
+
                     try
                     {
+                        
+                        //=============
                         //这里必须try catch，否则连接一旦中断程序就崩溃了，要是弹出错误提示让机主看见那就囧了
-                        byte[] bt = new byte[30720000];
                         count = ns1.Read(bt, 0, bt.Length);
                         ns2.Write(bt, 0, count);
+                        //==============
+                        if(bits< count)
+                        {
+                            bits = count;
+                        }
+                        Console.WriteLine(strY + " : " + threadMessage.type + "  length：" + bits + "  tc1:"+ tc1.Connected + "  tc2:" + tc2.Connected);
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.ToString());
-                        ns1.Dispose();
-                        ns2.Dispose();
-                        tc1.Close();
-                        tc2.Close();
+                        Console.WriteLine(threadMessage.type+"线程<<<<<<<<<<<<<<" +ex.ToString());
+                        Console.WriteLine(strY + " : " + threadMessage.type + "  length：" + bits + "  tc1:" + tc1.Connected + "  tc2:" + tc2.Connected);
+                        threadCount--;
                         break;
                     }
                     end = DateTime.Now.Subtract(DateTime.Parse("1970-1-1")).TotalMilliseconds;
                     if ((end - start) <= 1 || count == 0)
                     {
-                        if (overSpeedCount >= 500)
+                        if (overSpeedCount >= 50)
                         {
                             break;//无效线程死循环达到500次自动退出
                         }
@@ -410,9 +440,9 @@ namespace PortControllerServer
                 }
                 threadCount--;
             }
-            catch
+            catch(Exception ex)
             {
-
+                Console.WriteLine(threadMessage.type + "线程无法修复的错误<<<<<<<<<<<<<<" + ex.ToString());
             }
         }
 
@@ -564,6 +594,16 @@ namespace PortControllerServer
             Console.Write("异常：" + message + "\n");
         }
 
+
+        public static void logger(String str)
+        {
+            Console.WriteLine(str);
+        }
+
+        public static void logger(Exception str)
+        {
+            Console.WriteLine(str+"");
+        }
     }
 }
 
