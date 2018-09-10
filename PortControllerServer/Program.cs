@@ -10,6 +10,8 @@ using Oracle.ManagedDataAccess.Client;
 using System.Data;
 using fileTools;
 using System.Collections;
+using System.Net;
+using SuperSocket.SocketBase;
 
 namespace PortControllerServer
 {
@@ -27,8 +29,12 @@ namespace PortControllerServer
             }
 
             TcpListener tl = new TcpListener(serverPort);
+            //IPEndPoint ipe = new IPEndPoint(serverPort);
+
             tl.Start();
-            
+
+
+
             while (true)
             {
                 try
