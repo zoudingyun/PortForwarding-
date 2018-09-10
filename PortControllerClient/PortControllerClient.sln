@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortControllerClient", "Por
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortControllerServer", "..\PortControllerServer\PortControllerServer.csproj", "{A0B594A2-4597-4B62-AAD7-D81F566DDE01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortControllerServer_SuperSocket", "..\PortControllerServer_SuperSocket\PortControllerServer_SuperSocket.csproj", "{3F84D361-CE97-4287-9C3F-D737CFCD4E40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,22 @@ Global
 		{A0B594A2-4597-4B62-AAD7-D81F566DDE01}.Release|x64.Build.0 = Release|Any CPU
 		{A0B594A2-4597-4B62-AAD7-D81F566DDE01}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0B594A2-4597-4B62-AAD7-D81F566DDE01}.Release|x86.Build.0 = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|ARM.Build.0 = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|ARM.ActiveCfg = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|ARM.Build.0 = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|x64.Build.0 = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F84D361-CE97-4287-9C3F-D737CFCD4E40}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

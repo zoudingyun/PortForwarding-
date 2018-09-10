@@ -6,4 +6,14 @@ C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.pdb
 C:\Pro\C#\PortControllerServer\bin\Debug\PortControllerServer.exe.config
 C:\Pro\C#\PortControllerServer\bin\Debug\Oracle.ManagedDataAccess.dll
 C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.csproj.CopyComplete
-C:\Pro\C#\PortControllerServer\obj\Debug\PortControllerServer.csprojAssemblyReference.cache
+C:\Pro\C#\PortControllerServer\bin\Debug\log4net.dll
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Common.dll
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Facility.dll
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketBase.dll
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketEngine.dll
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketService.exe
+C:\Pro\C#\PortControllerServer\bin\Debug\log4net.xml
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Common.xml
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Facility.xml
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketBase.xml
+C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketEngine.xml
