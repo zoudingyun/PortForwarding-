@@ -1,0 +1,5 @@
+﻿  PortControllerServer_CPP.cpp
+c:\pro\c#\portcontrollerserver_cpp\portcontrollerserver_cpp\portcontrollerserver_cpp.cpp(53): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\winsock2.h(1830): note: 参见“inet_addr”的声明
+c:\pro\c#\portcontrollerserver_cpp\portcontrollerserver_cpp\portcontrollerserver_cpp.cpp(130): warning C4101: “revData”: 未引用的局部变量
+  PortControllerServer_CPP.vcxproj -> C:\Pro\C#\PortControllerServer_CPP\Debug\PortControllerServer_CPP.exe
