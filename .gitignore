@@ -31,4 +31,4 @@
 # Debug files
 *.dSYM/
 
-PortControllerClient/\.vs/PortControllerClient/v15/
+PortControllerClient/.vs
