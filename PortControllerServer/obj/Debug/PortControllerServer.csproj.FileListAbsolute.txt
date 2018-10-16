@@ -17,3 +17,6 @@ C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Common.xml
 C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.Facility.xml
 C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketBase.xml
 C:\Pro\C#\PortControllerServer\bin\Debug\SuperSocket.SocketEngine.xml
+C:\Pro\PortForwarding-\PortControllerServer\obj\Debug\PortControllerServer.csprojAssemblyReference.cache
+C:\Pro\PortForwarding-\PortControllerServer\obj\Debug\PortControllerServer.csproj.CoreCompileInputs.cache
+C:\Pro\PortForwarding-\PortControllerServer\obj\Debug\PortControllerServer.pdb

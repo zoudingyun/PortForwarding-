@@ -23,7 +23,13 @@ namespace PortControllerClient.Forms
             string serverIp = INIhelp.GetValue("serverip");
             string serverPort = INIhelp.GetValue("serverport");
             string saveUser = INIhelp.GetValue("saveuser");
+            if (!"false".Equals(INIhelp.GetValue("isNewVersion")))
+            {
+                updateMessage updateM = new updateMessage();
+                INIhelp.SetValue("isNewVersion", "false");
+                updateM.ShowDialog(); // 模式窗体
 
+            }
             this.serverIP.Text = serverIp;
             this.serverPort.Text = serverPort;
             this.userName.Text = userid;

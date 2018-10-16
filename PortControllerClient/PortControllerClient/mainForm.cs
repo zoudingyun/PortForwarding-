@@ -331,116 +331,123 @@ namespace PortControllerClient
 
         private static int updateHosts(string key)
         {
-            string path = @"C:\WINDOWS\system32\drivers\etc\hosts";
-            //通常情况下这个文件是只读的，所以写入之前要取消只读
-            //File.SetAttributes(path, File.GetAttributes(path) & (~FileAttributes.ReadOnly));//取消只读
-            if (key.Length <= 0)
+            try
             {
-                return 0;
-            }
-            //1.创建文件流
-            FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
-            //2.创建写入器
-            StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
-            //3.开始写入
-            bool result = false;//标识是否写入成功
-
-            string[] hosts = key.Split('|');
-            List<string[]> hosts_list = new List<string[]>();
-            for(int i=0;i<hosts.Length; i++)
-            {
-                string[] tmp = hosts[i].Split(':');
-                if (tmp.Length!=2)
-                {
-                    continue;
-                }
-                hosts_list.Add(tmp);
-            }
-
-            StreamReader streamReader = new StreamReader(fs);
-            string line = "";
-            while ((line = streamReader.ReadLine()) != null)
-            {
-                
-
-                for(int i=0;i< hosts_list.Count; i++)
-                {
-                    //line就是一行一行的文本
-                    if (line.IndexOf(hosts_list[i][1]) >= 0)
-                    {
-                        hosts_list.Remove(hosts_list[i]);
-                    }
-                }
-                if (hosts_list.Count<=0)
+                string path = @"C:\WINDOWS\system32\drivers\etc\hosts";
+                //通常情况下这个文件是只读的，所以写入之前要取消只读
+                //File.SetAttributes(path, File.GetAttributes(path) & (~FileAttributes.ReadOnly));//取消只读
+                if (key.Length <= 0)
                 {
                     return 0;
                 }
-            }
+                //1.创建文件流
+                FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
+                //2.创建写入器
+                StreamWriter sw = new StreamWriter(fs, Encoding.UTF8);
+                //3.开始写入
+                bool result = false;//标识是否写入成功
 
-
-            try
-            {
-                //StringBuilder sb = new StringBuilder();
-                //sb.Append(hosts_list[i][0] + " ");//域名
-                sw.WriteLine("");
-                for (int i = 0; i < hosts_list.Count; i++)
+                string[] hosts = key.Split('|');
+                List<string[]> hosts_list = new List<string[]>();
+                for (int i = 0; i < hosts.Length; i++)
                 {
-                    sw.WriteLine(hosts_list[i][0]+" "+ hosts_list[i][1]);
-                }
-                
-                
-                result = true;
-            }
-            catch (Exception ex)
-            {
-                result = false;
-            }
-            finally
-            {
-                //4.关闭写入器
-                if (sw != null)
-                {
-                    sw.Close();
-                }
-                //5.关闭文件流
-                if (fs != null)
-                {
-                    fs.Close();
+                    string[] tmp = hosts[i].Split(':');
+                    if (tmp.Length != 2)
+                    {
+                        continue;
+                    }
+                    hosts_list.Add(tmp);
                 }
 
-                Process p = new Process();
-                            //设置要启动的应用程序
-                 p.StartInfo.FileName = "cmd.exe";
-                                //是否使用操作系统shell启动
-                 p.StartInfo.UseShellExecute = false;
-                                 // 接受来自调用程序的输入信息
-                 p.StartInfo.RedirectStandardInput = true;
-                                 //输出信息
-                 p.StartInfo.RedirectStandardOutput = true;
-                                 // 输出错误
-                p.StartInfo.RedirectStandardError = true;
-                                 //不显示程序窗口
-                 p.StartInfo.CreateNoWindow = true;
-                                //启动程序
-                 p.Start();
+                StreamReader streamReader = new StreamReader(fs);
+                string line = "";
+                while ((line = streamReader.ReadLine()) != null)
+                {
+
+
+                    for (int i = 0; i < hosts_list.Count; i++)
+                    {
+                        //line就是一行一行的文本
+                        if (line.IndexOf(hosts_list[i][1]) >= 0)
+                        {
+                            hosts_list.Remove(hosts_list[i]);
+                        }
+                    }
+                    if (hosts_list.Count <= 0)
+                    {
+                        return 0;
+                    }
+                }
+                sw.Close();//关闭host
+                fs.Close();
+                try
+                {
+                    //StringBuilder sb = new StringBuilder();
+                    //sb.Append(hosts_list[i][0] + " ");//域名
+                    sw.WriteLine("");
+                    for (int i = 0; i < hosts_list.Count; i++)
+                    {
+                        sw.WriteLine(hosts_list[i][0] + " " + hosts_list[i][1]);
+                    }
+
+
+                    result = true;
+                }
+                catch (Exception ex)
+                {
+                    result = false;
+                }
+                finally
+                {
+                    //4.关闭写入器
+                    //if (sw != null)
+                    //{
+                    //    sw.Close();
+                    //}
+                    ////5.关闭文件流
+                    //if (fs != null)
+                    //{
+                    //    fs.Close();
+                    //}
+
+                    Process p = new Process();
+                    //设置要启动的应用程序
+                    p.StartInfo.FileName = "cmd.exe";
+                    //是否使用操作系统shell启动
+                    p.StartInfo.UseShellExecute = false;
+                    // 接受来自调用程序的输入信息
+                    p.StartInfo.RedirectStandardInput = true;
+                    //输出信息
+                    p.StartInfo.RedirectStandardOutput = true;
+                    // 输出错误
+                    p.StartInfo.RedirectStandardError = true;
+                    //不显示程序窗口
+                    p.StartInfo.CreateNoWindow = true;
+                    //启动程序
+                    p.Start();
 
                     //向cmd窗口发送输入信息             
-                 p.StandardInput.WriteLine("ipconfig /flushdns&exit");
-                
-                 p.StandardInput.AutoFlush = true;
-                p.WaitForExit();
-                p.Close();
+                    p.StandardInput.WriteLine("ipconfig /flushdns&exit");
+
+                    p.StandardInput.AutoFlush = true;
+                    p.WaitForExit();
+                    p.Close();
 
 
 
+                }
+                if (result == true)
+                {
+
+                    //File.SetAttributes(path, File.GetAttributes(path) | FileAttributes.ReadOnly);//设置只读
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
             }
-            if (result == true)
-            {
-                
-                //File.SetAttributes(path, File.GetAttributes(path) | FileAttributes.ReadOnly);//设置只读
-                return 0;
-            }
-            else
+            catch(Exception ex)
             {
                 return -1;
             }
