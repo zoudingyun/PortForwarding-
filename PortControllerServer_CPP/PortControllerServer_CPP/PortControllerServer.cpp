@@ -7,7 +7,8 @@
 #include <string>
 #include <thread>
 #include "INIParser.h"
-
+#include <extern.h>
+#include <logger.h>
 
 #pragma comment(lib, "ws2_32.lib")
 
@@ -19,18 +20,25 @@
 #define CHANGENAME "CHANGENAME"
 #define RESET_USER_PWD "RESET-USER-PWD"
 
+using namespace logger;
 using namespace std;
 
 
 void output(int i,int j);
 SOCKET listen(int port);
+void loggerMenager_d(string title, string message);
+void loggerMenager_i(string title, string message);
+void loggerMenager_w(string title, string message);
+void loggerMenager_e(string title, string message);
 
 
 
-
+FileLogger fl("message.log");
 
 int main() 
 {
+	
+
 	//auto s_result = s_split("hello,do you ;know the word?", ",");
 	//std::copy(s_result.begin(), s_result.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
 
@@ -43,11 +51,18 @@ int main()
 	
 	getchar();
 	return 0;*/
-	int port = 8007;
+	port = 8007;
 	INIParser ini_parser;//读取配置文件
 
-
-
+	//读取配置文件失败
+	if (ini_parser.ReadINI("conf.ini")<=0)
+	{
+		loggerMenager_e("main()", "读取配置失败！");
+		system("pause");
+		return 0;
+	}
+	
+	//port = ini_parser.GetValue("","");
 
 	try
 	{
@@ -183,4 +198,30 @@ SOCKET listen(int port)
 	
 
 	return connSocket;
+}
+
+
+///日志输出
+void loggerMenager_d(string title,string message) 
+{
+	debug(Level::Debug) << title+" :" << message;
+	fl(Level::Debug) << title + " :" << message;
+}
+
+void loggerMenager_i(string title, string message)
+{
+	debug(Level::Info) << title + " :" << message;
+	fl(Level::Info) << title + " :" << message;
+}
+
+void loggerMenager_w(string title, string message)
+{
+	debug(Level::Warning) << title + " :" << message;
+	fl(Level::Warning) << title + " :" << message;
+}
+
+void loggerMenager_e(string title, string message)
+{
+	debug(Level::Error) << title + " :" << message;
+	fl(Level::Error) << title + " :" << message;
 }
