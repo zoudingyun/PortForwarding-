@@ -1,0 +1,2 @@
+C:\Pro\PortForwarding-\PortControllerServer_SuperSocket\obj\Debug\PortControllerServer_SuperSocket.csprojAssemblyReference.cache
+C:\Pro\PortForwarding-\PortControllerServer_SuperSocket\obj\Debug\PortControllerServer_SuperSocket.csproj.CoreCompileInputs.cache

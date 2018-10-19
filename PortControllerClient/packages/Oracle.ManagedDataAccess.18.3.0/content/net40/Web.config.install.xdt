@@ -14,7 +14,7 @@
 
   <!-- insert new entry -->
   <configSections xdt:Locator="XPath(/configuration/configSections[last()])">
-      <section name="oracle.manageddataaccess.client" type="OracleInternal.Common.ODPMSectionHandler, Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" xdt:Transform="Insert" />
+      <section name="oracle.manageddataaccess.client" type="OracleInternal.Common.ODPMSectionHandler, Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342" xdt:Transform="Insert" />
   </configSections>
 
   <configSections xdt:Transform="RemoveAll" xdt:Locator="Condition(count(*)=0)" />
@@ -43,7 +43,7 @@
   <system.data>
     <DbProviderFactories>
       <remove invariant="Oracle.ManagedDataAccess.Client" xdt:Transform="Insert"/>
-      <add name="ODP.NET, Managed Driver" invariant="Oracle.ManagedDataAccess.Client" description="Oracle Data Provider for .NET, Managed Driver" type="Oracle.ManagedDataAccess.Client.OracleClientFactory, Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" xdt:Transform="Insert" />      
+      <add name="ODP.NET, Managed Driver" invariant="Oracle.ManagedDataAccess.Client" description="Oracle Data Provider for .NET, Managed Driver" type="Oracle.ManagedDataAccess.Client.OracleClientFactory, Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342" xdt:Transform="Insert" />      
     </DbProviderFactories>
   </system.data>
 
@@ -74,7 +74,6 @@
       <dependentAssembly xdt:Transform="Insert">
         <publisherPolicy apply="no"/>
         <assemblyIdentity name="Oracle.ManagedDataAccess" publicKeyToken="89b483f429c47342" culture="neutral" />
-        <bindingRedirect oldVersion="4.121.0.0 - 4.65535.65535.65535" newVersion="4.122.1.0" />
       </dependentAssembly>
     </assemblyBinding>
   </runtime>

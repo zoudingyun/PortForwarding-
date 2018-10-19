@@ -1,11 +1,9 @@
-Oracle.ManagedDataAccess NuGet Package 12.2.1100 README
-===========================================================
+Oracle.ManagedDataAccess NuGet Package 18.3.0 README
+====================================================
 
 Release Notes: Oracle Data Provider for .NET, Managed Driver
 
-May 2017
-
-Copyright (c) 2017, Oracle and/or its affiliates. All rights reserved.
+August 2018
 
 This document provides information that supplements the Oracle Data Provider for .NET (ODP.NET) documentation. 
 You have downloaded Oracle Data Provider for .NET from Oracle, the license agreement to which is available at 
@@ -22,34 +20,25 @@ TABLE OF CONTENTS
 Note: The 32-bit "Oracle Developer Tools for Visual Studio" download from http://otn.oracle.com/dotnet is 
 required for Entity Framework design-time features and for other Visual Studio designers such as the 
 TableAdapter Wizard. This NuGet download does not enable design-time tools; it only provides run-time support. 
-This version of ODP.NET supports Oracle Database version 10.2 and higher.
+This version of ODP.NET supports Oracle Database version 11.2 and higher.
 
 
-New Features since Oracle.ManagedDataAccess NuGet Package 12.1.24160719
-=======================================================================
-1. Database Resident Connection Pooling
-2. Multitenant and Pluggable Databases Connection Pooling
-3. Edition-Based Redefinition Connection Pooling
-4. Connection Configuration Upon Open
-5. .NET Framework 4.6.2 and 4.7 certification
-6. Longer Schema Identifiers
-7. PL/SQL Boolean Data Type
+New Features since Oracle.ManagedDataAccess NuGet Package 12.2.1100
+===================================================================
+1. .NET Framework 4.7.x Certification, including 4.7.1 and 4.7.2
+2. Secure Passwords with OracleCredential Class
 
-For more details on these features, visit the new features section of the ODP.NET documentation:
-http://docs.oracle.com/cd/E85694_01/ODPNT/release_changes.htm#GUID-23EE609C-064C-484E-9D3A-C9CA4E1A970F
+For more details on these features, visit the new features section of the ODP.NET documentation for ODAC 18c.
 
 
-Bug Fixes since Oracle.ManagedDataAccess NuGet Package 12.1.24160719
-====================================================================
-24700485 VALUES ARE PARTIALLY FILLED IN DATATABLE USING MANAGED ODP.NET                 
-22765798 ODPM: INDEX OUTSIDE ARRAY BOUNDS EXCEPTION WHEN FETCHSIZE HAS LARGE VALUE      
-24810947 KERBEROS INITIAL HANDSHAKE FAILS IF "AUTHENTICATOR" IS GREATER THAN SDU SIZE   
-25490365 LATEST DST PATCH NEEDS TO BE ADDED FOR ODP.NET MANAGED DRIVER                  
-22385038 ORA-31061: XDB ERROR WHILE INSERTING DATA INTO XMLTYPE DATATYPE USING ODPM     
-24299880 ORA-00303 WHEN PROGRAM PATH CONTAINS # CHARACTER AND POOLING ENABLED           
-21393655 ODPM THROWS "INDEX WAS OUT OF RANGE" EXCEPTION  WHILE FETCHING NULL AND XMLTYPE
-21847644 SYSTEM.INDEXOUTOFRANGEEXCEPTION OR SYSTEM.ARGUMENTEXCEPTION WITH MANAGED ODP.NET
-22308527 UNEXPECTED PACKET ERROR WITH NEWLINE WITHIN SQL QUERY  
+Bug Fixes since Oracle.ManagedDataAccess NuGet Package 12.2.1100
+================================================================
+28227512 ODPM - ORACLEDECIMAL.CONVERTTOPRECSCALE METHOD THROWS ORA-16550 ERROR 
+25165860 ODPM: CHANGE IN DDL THROWS "INDEX WAS OUTSIDE THE BOUNDS OF THE ARRAY" ERROR
+24810947 KERBEROS INITIAL HANDSHAKE FAILS IF "AUTHENTICATOR" IS GREATER THAN SDU SIZE
+24700485 VALUES ARE PARTIALLY FILLED IN DATATABLE USING MANAGED ODP.NET
+21508749 ARRAYBINDROWSAFFECTED PROPERTY FAILS WITH MANAGED PROVIDER IN 12C
+
 
 
 Installation and Configuration Steps
@@ -58,7 +47,7 @@ The downloads are NuGet packages that can be installed with the NuGet Package Ma
 to install ODP.NET, Managed Driver.
 
 1. Un-GAC and un-configure any existing assembly (i.e. Oracle.ManagedDataAccess.dll) and policy DLL 
-(i.e. Policy.4.122.Oracle.ManagedDataAccess.dll) for the ODP.NET, Managed Driver, version 12.2.0.1
+(i.e. Policy.4.122.Oracle.ManagedDataAccess.dll) for the ODP.NET, Managed Driver, version 4.122.18.3
 that exist in the GAC. Remove all references of Oracle.ManagedDataAccess from machine.config file, if any exists.
 
 2. In Visual Studio, open NuGet Package Manager from an existing Visual Studio project. 
@@ -103,21 +92,14 @@ license agreement and Visual Studio will continue the setup.
 
 After following these instructions, ODP.NET is now configured and ready to use.
 
-NOTE: ODP.NET, Managed Driver comes with two platform specific assemblies:
-
-        i.  Oracle.ManagedDataAccessDTC.dll (for Distributed Transaction Support)
-        ii. Oracle.ManagedDataAccessIOP.dll (for Kerberos Support)
-
-The Oracle.ManagedDataAccessDTC.dll assembly is ONLY needed if you are using Distributed Trasactions and the 
-.NET Framework being used is 4.5.1 or lower. If you are using .NET Framework 4.5.2 or higher, this assembly does 
-not need to be referenced by your application.
+NOTE: ODP.NET, Managed Driver comes with one set of platform specific assemblies for Kerberos support: Oracle.ManagedDataAccessIOP.dll.
 
 The Oracle.ManagedDataAccessIOP.dll assembly is ONLY needed if you are using Kerberos5 based external 
 authentication. Kerberos5 users will need to download MIT Kerberos for Windows version 4.0.1 from 
 	http://web.mit.edu/kerberos/dist/
 to utilize ODP.NET, Managed Driver's support of Kerberos5.
 
-These asssemblies are located under
+The asssemblies are located under
       packages\Oracle.ManagedDataAccess.<version>\bin\x64
 and
       packages\Oracle.ManagedDataAccess.<version>\bin\x86
@@ -125,26 +107,23 @@ depending on the platform.
 
 If these assemblies are required by your application, your Visual Studio project requires additional changes.
 
-Use the following steps for your application to use the 64-bit version of Oracle.ManagedDataAccessDTC.dll:
+Use the following steps for your application to use the 64-bit version of Oracle.ManagedDataAccessIOP.dll:
 
 1. Right click on the Visual Studio project.
-2. Select Add -> New Folder
+2. Select Add -> New Folder.
 3. Name the folder x64.
-4. Right click on the newly created x64 folder
-5. Select Add -> Existing Item
+4. Right click on the newly created x64 folder.
+5. Select Add -> Existing Item.
 6. Browse to packages\Oracle.ManagedDataAccess.<version>\bin\x64 under your project solution directory.
-7. Choose Oracle.ManagedDataAccessDTC.dll
-8. Click the 'Add' button
-9. Left click the newly added Oracle.ManagedDataAccessDTC.dll in the x64 folder
+7. Choose Oracle.ManagedDataAccessIOP.dll.
+8. Click the 'Add' button.
+9. Left click the newly added Oracle.ManagedDataAccessIOP.dll in the x64 folder.
 10. In the properties window, set 'Copy To Output Directory' to 'Copy Always'.
 
 For x86 targeted applications, name the folder x86 and add assemblies from the 
 packages\Oracle.ManagedDataAccess.<version>\bin\x86 folder.
 
-Use the same steps for adding Oracle.ManagedDataAccessIOP.dll.
-
-To make your application platform independent even if it depends on Oracle.ManagedDataAccessDTC.dll and/or 
-Oracle.ManagedDataAccessIOP.dll, create both x64 and x86 folders with the necessary assemblies added to them.
+To make your application platform independent even if it depends on Oracle.ManagedDataAccessIOP.dll, create both x64 and x86 folders with the necessary assemblies added to them.
 
 
 Installation Changes
@@ -159,7 +138,7 @@ section for ODP.NET, Managed Driver-specific configuration:
 
 <configuration>
   <configSections>
-    <section name="oracle.manageddataaccess.client" type="OracleInternal.Common.ODPMSectionHandler, Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
+    <section name="oracle.manageddataaccess.client" type="OracleInternal.Common.ODPMSectionHandler, Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342" />
   </configSections>
 </configuration>
 
@@ -182,7 +161,7 @@ entry:
   <system.data>
     <DbProviderFactories>
       <remove invariant="Oracle.ManagedDataAccess.Client" />
-      <add name="ODP.NET, Managed Driver" invariant="Oracle.ManagedDataAccess.Client" description="Oracle Data Provider for .NET, Managed Driver" type="Oracle.ManagedDataAccess.Client.OracleClientFactory, Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
+      <add name="ODP.NET, Managed Driver" invariant="Oracle.ManagedDataAccess.Client" description="Oracle Data Provider for .NET, Managed Driver" type="Oracle.ManagedDataAccess.Client.OracleClientFactory, Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342" />
     </DbProviderFactories>
   </system.data>
 </configuration>
@@ -200,7 +179,7 @@ associated with the application.
       <dependentAssembly>
         <publisherPolicy apply="no" />
         <assemblyIdentity name="Oracle.ManagedDataAccess" publicKeyToken="89b483f429c47342" culture="neutral" />
-        <bindingRedirect oldVersion="4.122.0.0 - 4.65535.65535.65535" newVersion="4.122.1.0" />
+        <bindingRedirect oldVersion="4.122.0.0 - 4.65535.65535.65535" newVersion="4.122.18.3" />
       </dependentAssembly>
     </assemblyBinding>
   </runtime>
@@ -226,17 +205,12 @@ your connection string when connecting to an Oracle Database through ODP.NET, Ma
 
 Documentation Corrections and Additions
 =======================================
-This section contains information that corrects or adds to existing ODP.NET documentation, which can be found here:
-http://www.oracle.com/technetwork/topics/dotnet/tech-info/index.html
+None
 
 
 ODP.NET, Managed Driver Tips, Limitations, and Known Issues
 ===========================================================
-This section contains information that is specific to ODP.NET, Managed Driver. 
+None
 
-1. OracleConnection object's OpenWithNewPassword() method invocation will result in an ORA-1017 error with 11.2.0.3.0 
-and earlier versions of the database. [Bug 12876992]
 
-2. ODP.NET does not support usage of the "ALTER SESSION" statement to modify the Edition in Edition-Based Redefinition during the lifetime of a process.
-
-3. ODP.NET, Managed Driver and Distributed Transactions - Using managed ODP.NET distributed transactions with Oracle.ManagedDataAccessDTC.dll is deprecated as it is primarily used with .NET Framework 4 releases earlier than .NET 4.5.2. Microsoft has desupported these earlier .NET Framework 4 versions. Managed ODP.NET distributed transactions will continue to be supported and enhanced with .NET Framework's native fully managed distributed transaction implementation.
+Copyright (c) 2018, Oracle and/or its affiliates. All rights reserved.

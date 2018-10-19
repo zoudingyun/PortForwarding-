@@ -11,7 +11,6 @@ using System.Data;
 using fileTools;
 using System.Collections;
 using System.Net;
-using SuperSocket.SocketBase;
 
 namespace PortControllerServer
 {
