@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<WinSock2.h>
 #include <vector>
 #include <iterator>
@@ -6,6 +6,7 @@
 #include <Tools.h>
 #include <string>
 #include <thread>
+#include "INIParser.h"
 
 
 #pragma comment(lib, "ws2_32.lib")
@@ -43,6 +44,11 @@ int main()
 	getchar();
 	return 0;*/
 	int port = 8007;
+	INIParser ini_parser;//è¯»å–é…ç½®æ–‡ä»¶
+
+
+
+
 	try
 	{
 		while (true)
@@ -52,10 +58,9 @@ int main()
 			{
 				continue;
 			}
-			////½ÓÊÕµÚÒ»´ÎÇëÇóÊı¾İ
+			////æ¥æ”¶ç¬¬ä¸€æ¬¡è¯·æ±‚æ•°æ®
 			char recvBuf[BUF_NUM];
 			recv(clientSocket, recvBuf, BUF_NUM, 0);
-			int ref =strlen(recvBuf);
 			string userMessage = getRealChar(recvBuf);
 			//delete(recvBuf);
 			map<string, string> messageMap =  getMessages(userMessage);
@@ -63,6 +68,13 @@ int main()
 			if ((string)messageMap["TYPE"] == LOGIN)
 			{
 				float ver = stof((string)messageMap["VER"]);
+				ini_parser.ReadINI("conf.ini");
+				ini_parser.WriteINI("conf.ini");
+
+				ini_parser.SetValue("class1", "name1", "Tom");
+				ini_parser.SetValue("class2", "name2", "Lucy");
+				ini_parser.WriteINI("test.ini");
+				//if(ver)
 				Sleep(100);
 			}
 			else if((string)messageMap["TYPE"] == CONNECT)
@@ -99,7 +111,7 @@ void output(int i, int j)
 
 SOCKET listen(int port)
 {
-	//¼ÓÔØÌ×½Ó×Ö¿â
+	//åŠ è½½å¥—æ¥å­—åº“
 	WSADATA wsaData;
 	int iRet = 0;
 	iRet = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -115,7 +127,7 @@ SOCKET listen(int port)
 		return NULL;
 	}
 
-	//´´½¨Ì×½Ó×Ö
+	//åˆ›å»ºå¥—æ¥å­—
 	SOCKET serverSocket = socket(AF_INET, SOCK_STREAM, 0);
 	if (serverSocket == INVALID_SOCKET)
 	{
@@ -123,13 +135,13 @@ SOCKET listen(int port)
 		return NULL;
 	}
 
-	//³õÊ¼»¯·şÎñÆ÷µØÖ·×å±äÁ¿
+	//åˆå§‹åŒ–æœåŠ¡å™¨åœ°å€æ—å˜é‡
 	SOCKADDR_IN addrSrv;
 	addrSrv.sin_addr.S_un.S_addr = htonl(INADDR_ANY);
 	addrSrv.sin_family = AF_INET;
 	addrSrv.sin_port = htons(port);
 
-	//°ó¶¨
+	//ç»‘å®š
 	iRet = ::bind(serverSocket, (SOCKADDR*)&addrSrv, sizeof(SOCKADDR));
 	if (iRet == SOCKET_ERROR)
 	{
@@ -138,7 +150,7 @@ SOCKET listen(int port)
 	}
 
 
-	//¼àÌı
+	//ç›‘å¬
 	iRet = listen(serverSocket, CONNECT_NUM_MAX);
 	if (iRet == SOCKET_ERROR)
 	{
@@ -146,7 +158,7 @@ SOCKET listen(int port)
 		return NULL;
 	}
 
-	//µÈ´ıÁ¬½Ó_½ÓÊÕ_·¢ËÍ
+	//ç­‰å¾…è¿æ¥_æ¥æ”¶_å‘é€
 	SOCKADDR_IN clientAddr;
 	int len = sizeof(SOCKADDR);
 
@@ -157,12 +169,12 @@ SOCKET listen(int port)
 			return NULL;
 		}
 
-		////½ÓÊÕÊı¾İ
+		////æ¥æ”¶æ•°æ®
 		//char recvBuf[BUF_NUM];
 		//recv(connSocket, recvBuf, 100, 0);
 		//printf("%s\n", recvBuf);
 
-		////·¢ËÍÊı¾İ
+		////å‘é€æ•°æ®
 		//char sendBuf[BUF_NUM];
 		//sprintf_s(sendBuf, "Welcome %s", inet_ntoa(clientAddr.sin_addr));
 		//send(connSocket, sendBuf, strlen(sendBuf) + 1, 0);

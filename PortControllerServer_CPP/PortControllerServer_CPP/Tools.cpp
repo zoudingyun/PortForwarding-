@@ -1,4 +1,4 @@
-#include <Tools.h>
+ï»¿#include <Tools.h>
 
 
 using namespace std;
@@ -6,8 +6,8 @@ using namespace std;
 std::vector<std::string> s_split(const std::string& in, const std::string& delim)
 {
 	std::regex re{ delim };
-	// µ÷ÓÃ std::vector::vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
-	// ¹¹Ôìº¯Êı,Íê³É×Ö·û´®·Ö¸î
+	// è°ƒç”¨ std::vector::vector (InputIterator first, InputIterator last,const allocator_type& alloc = allocator_type())
+	// æ„é€ å‡½æ•°,å®Œæˆå­—ç¬¦ä¸²åˆ†å‰²
 	return std::vector<std::string> {
 		std::sregex_token_iterator(in.begin(), in.end(), re, -1),
 			std::sregex_token_iterator()
@@ -65,6 +65,7 @@ map<string, string> getMessages(string message)
 	{
 		cout << a.what() << endl;
 		delete[] messsages;
+		return hashtable;
 	}
 	
 }

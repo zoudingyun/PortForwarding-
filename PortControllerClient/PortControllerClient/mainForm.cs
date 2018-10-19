@@ -378,8 +378,7 @@ namespace PortControllerClient
                         return 0;
                     }
                 }
-                sw.Close();//关闭host
-                fs.Close();
+               
                 try
                 {
                     //StringBuilder sb = new StringBuilder();
@@ -392,10 +391,14 @@ namespace PortControllerClient
 
 
                     result = true;
+                    sw.Close();//关闭host
+                    fs.Close();
                 }
                 catch (Exception ex)
                 {
                     result = false;
+                    sw.Close();//关闭host
+                    fs.Close();
                 }
                 finally
                 {
@@ -436,6 +439,16 @@ namespace PortControllerClient
 
 
                 }
+
+                if (sw != null)
+                {
+                    sw.Close();
+                }
+                if (fs != null)
+                { 
+                    fs.Close();
+                }
+
                 if (result == true)
                 {
 
