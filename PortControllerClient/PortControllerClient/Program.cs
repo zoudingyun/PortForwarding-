@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortControllerClient.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -34,7 +35,8 @@ namespace PortControllerClient
                 //如果是管理员，则直接运行
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new mainForm());
+                //Application.Run(new mainForm());
+                Application.Run(new WebForm());
 
             }
             else

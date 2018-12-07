@@ -1,0 +1,48 @@
+input:-ms-input-placeholder {
+	color: rgb(206, 207, 210); opacity: 1;
+}
+html {
+	background-position: left top; margin: 0px; padding: 0px; height: 100%; color: rgb(255, 255, 255); font-family: "Source Sans Pro"; font-size: 16px; background-repeat: no-repeat; background-size: 100%; background-color: rgb(36, 38, 69);
+}
+body {
+	background-position: left top; margin: 0px; padding: 0px; height: 100%; color: rgb(255, 255, 255); font-family: "Source Sans Pro"; font-size: 16px; background-repeat: no-repeat; background-size: 100%; background-color: rgb(36, 38, 69);
+}
+h1 {
+	margin: 0.6rem 0px; letter-spacing: -1px; font-size: 2.8em; font-weight: 700;
+}
+h1 > span {
+	font-weight: 300;
+}
+h2 {
+	margin: 0.3rem 0px; font-size: 1.15em; font-weight: 300;
+}
+main {
+	margin: 4em auto; width: 95%; max-width: 1000px; opacity: 0;
+}
+main.loaded {
+	transition:opacity 0.25s linear; opacity: 1;
+}
+main header {
+	width: 100%;
+}
+main header > div {
+	width: 50%;
+}
+main header > .left {
+	height: 100%;
+}
+main header > .right {
+	height: 100%;
+}
+main .loaders {
+	flex:0 1 auto; flex-flow:row wrap; width: 100%; display: flex; box-sizing: border-box;
+}
+main .loaders .loader {
+	flex:1 0 25%; height: 200px; display: flex; max-width: 25%; box-sizing: border-box; flex-direction: column; justify-content: center; align-items: center;
+}
+.J_codeimg {
+	padding: 3px; width: 85px; height: 36px; color: rgb(255, 255, 255); z-index: 0;
+}
+.MyLogo {
+	top: 0px; margin-top: 0px; position: absolute;
+}

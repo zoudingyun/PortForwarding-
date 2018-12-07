@@ -1,0 +1,39 @@
+@font-face {
+	font-family: icomoon;
+	src: url(/Admin/Login/fonts/icomoon.eot?#iefixrretjt) format("embedded-opentype"), url(/Admin/Login/fonts/icomoon.woff?rretjt) format("woff"), url(/Admin/Login/fonts/icomoon.ttf?rretjt) format("truetype"), url(/Admin/Login/fonts/icomoon.svg?rretjt#icomoon) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^='icon-'] {
+	text-transform: none; line-height: 1; font-family: "icomoon"; font-style: normal; font-variant: normal; font-weight: normal; speak: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+[class*=' icon-'] {
+	text-transform: none; line-height: 1; font-family: "icomoon"; font-style: normal; font-variant: normal; font-weight: normal; speak: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+html {
+	margin: 0px; padding: 0px;
+}
+.clearfix::before {
+	display: table; content: " ";
+}
+.clearfix::after {
+	display: table; content: " ";
+}
+.clearfix::after {
+	clear: both;
+}
+body {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+}
+a {
+	color: rgb(47, 160, 236); text-decoration: none;
+}
+a:hover {
+	color: rgb(116, 119, 123);
+}
+a:focus {
+	color: rgb(116, 119, 123);
+}

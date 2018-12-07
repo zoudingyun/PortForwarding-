@@ -1,0 +1,1345 @@
+@font-face {
+	font-family: layui-icon;
+	src: url(../font/iconfont.eot?v=1.0.9#iefix) format("embedded-opentype"), url(../font/iconfont.svg?v=1.0.9#iconfont) format("svg"), url(../font/iconfont.woff?v=1.0.9) format("woff"), url(../font/iconfont.ttf?v=1.0.9) format("truetype");
+}
+.layui-laypage a {
+	text-decoration: none;
+}
+a {
+	text-decoration: none;
+}
+.layui-btn {
+	vertical-align: middle;
+}
+.layui-inline {
+	vertical-align: middle;
+}
+img {
+	vertical-align: middle;
+}
+.layui-btn {
+	-ms-user-select: none; -webkit-user-select: none; -moz-user-select: none;
+}
+.layui-unselect {
+	-ms-user-select: none; -webkit-user-select: none; -moz-user-select: none;
+}
+.layui-btn {
+	-moz-user-select: none;
+}
+.layui-tree li i {
+	-moz-user-select: none;
+}
+.layui-unselect {
+	-moz-user-select: none;
+}
+blockquote {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+button {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+dd {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+div {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+dl {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+dt {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+form {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h1 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h2 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h3 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h4 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h5 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+h6 {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+li {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ol {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+p {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+pre {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+td {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+textarea {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+th {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ul {
+	margin: 0px; padding: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:active {
+	outline: 0px;
+}
+a:hover {
+	outline: 0px;
+}
+img {
+	border: currentColor; border-image: none; margin-top: 5px; display: inline-block;
+}
+li {
+	list-style: none;
+}
+table {
+	border-collapse: collapse; border-spacing: 0;
+}
+h1 {
+	font-size: 14px; font-weight: 400;
+}
+h2 {
+	font-size: 14px; font-weight: 400;
+}
+h3 {
+	font-size: 14px; font-weight: 400;
+}
+h4 {
+	font-size: 100%; font-weight: 400;
+}
+h5 {
+	font-size: 100%; font-weight: 400;
+}
+h6 {
+	font-size: 100%; font-weight: 400;
+}
+button {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+input {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+optgroup {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+option {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+select {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+textarea {
+	outline: 0px; font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+}
+pre {
+	white-space: pre-wrap; -ms-word-wrap: break-word;
+}
+.layui-icon {
+	font-family: layui-icon !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+body {
+	font: 14px/normal Helvetica Neue, Helvetica, PingFang SC, Î¢ÈíÑÅºÚ, Tahoma, Arial, sans-serif; font-size-adjust: none; font-stretch: normal;
+}
+hr {
+	margin: 10px 0px; border: 0px currentColor; border-image: none; height: 1px; clear: both; background-color: rgb(226, 226, 226);
+}
+a {
+	color: rgb(51, 51, 51);
+}
+a:hover {
+	color: rgb(119, 119, 119);
+}
+a cite {
+	font-style: normal;
+}
+.layui-box {
+	box-sizing: content-box !important; -webkit-box-sizing: content-box; -moz-box-sizing: content-box;
+}
+.layui-box * {
+	box-sizing: content-box !important; -webkit-box-sizing: content-box; -moz-box-sizing: content-box;
+}
+.layui-border-box {
+	box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-border-box * {
+	box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-clear {
+	clear: both;
+}
+.layui-clear::after {
+	height: 0px; clear: both; display: block; content: "\20";
+}
+.layui-inline {
+	display: inline-block; position: relative;
+}
+.layui-edge {
+	border-style: dashed; border-color: transparent; width: 0px; height: 0px; overflow: hidden; position: absolute;
+}
+.layui-elip {
+	overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-disabled {
+	color: rgb(210, 210, 210) !important; cursor: not-allowed !important;
+}
+.layui-disabled:hover {
+	color: rgb(210, 210, 210) !important; cursor: not-allowed !important;
+}
+.layui-circle {
+	border-radius: 100%;
+}
+.layui-show {
+	display: block !important;
+}
+.layui-hide {
+	display: none !important;
+}
+.layui-main {
+	margin: 0px auto; width: 1140px; position: relative;
+}
+.layui-header {
+	height: 60px; position: relative; z-index: 1000;
+}
+.layui-header a:hover {
+	transition:0.5s; -webkit-transition: all .5s;
+}
+.layui-side {
+	top: 0px; width: 200px; bottom: 0px; position: fixed; z-index: 999; -ms-overflow-x: hidden;
+}
+.layui-side-scroll {
+	width: 220px; height: 100%; -ms-overflow-x: hidden;
+}
+.layui-body {
+	left: 200px; top: 0px; width: auto; right: 0px; bottom: 0px; overflow: hidden; position: absolute; z-index: 998; -ms-overflow-y: auto; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-layout-admin .layui-header {
+	background-color: rgb(35, 38, 46);
+}
+.layui-layout-admin .layui-side {
+	top: 60px; width: 200px; -ms-overflow-x: hidden;
+}
+.layui-layout-admin .layui-body {
+	top: 60px; bottom: 44px;
+}
+.layui-layout-admin .layui-main {
+	margin: 0px 15px; width: auto;
+}
+.layui-layout-admin .layui-footer {
+	left: 200px; height: 44px; right: 0px; bottom: 0px; position: fixed; background-color: rgb(238, 238, 238);
+}
+.layui-btn {
+	outline: 0px; transition:border-color 0.3s cubic-bezier(0.65, 0.05, 0.35, 0.5); box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transition: border-color .3s cubic-bezier(.65, .05, .35, .5);
+}
+.layui-input {
+	outline: 0px; transition:border-color 0.3s cubic-bezier(0.65, 0.05, 0.35, 0.5); box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transition: border-color .3s cubic-bezier(.65, .05, .35, .5);
+}
+.layui-select {
+	outline: 0px; transition:border-color 0.3s cubic-bezier(0.65, 0.05, 0.35, 0.5); box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transition: border-color .3s cubic-bezier(.65, .05, .35, .5);
+}
+.layui-textarea {
+	outline: 0px; transition:border-color 0.3s cubic-bezier(0.65, 0.05, 0.35, 0.5); box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transition: border-color .3s cubic-bezier(.65, .05, .35, .5);
+}
+.layui-upload-button {
+	outline: 0px; transition:border-color 0.3s cubic-bezier(0.65, 0.05, 0.35, 0.5); box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transition: border-color .3s cubic-bezier(.65, .05, .35, .5);
+}
+.layui-elem-quote {
+	padding: 15px; border-radius: 0px 2px 2px 0px; line-height: 22px; margin-bottom: 10px; border-left-color: rgb(0, 150, 136); border-left-width: 5px; border-left-style: solid; background-color: rgb(242, 242, 242);
+}
+.layui-quote-nm {
+	background: 0px 0px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(226, 226, 226);
+}
+.layui-elem-field {
+	padding: 0px; border: 1px solid rgb(226, 226, 226); border-image: none; margin-bottom: 10px;
+}
+.layui-elem-field legend {
+	padding: 0px 10px; font-size: 20px; font-weight: 300; margin-left: 20px;
+}
+.layui-field-title {
+	border-width: 1px medium medium; border-style: solid none none; border-color: rgb(226, 226, 226) currentColor currentColor; margin: 10px 0px 20px; border-image: none;
+}
+.layui-field-box {
+	padding: 10px 15px;
+}
+.layui-field-title .layui-field-box {
+	padding: 10px 0px;
+}
+.layui-progress {
+	border-radius: 20px; height: 6px; position: relative; background-color: rgb(226, 226, 226);
+}
+.layui-progress-bar {
+	border-radius: 20px; transition:0.3s; width: 0px; height: 6px; text-align: right; position: absolute; max-width: 100%; background-color: rgb(95, 184, 120); -webkit-transition: all .3s;
+}
+.layui-progress-big {
+	height: 18px; line-height: 18px;
+}
+.layui-progress-big .layui-progress-bar {
+	height: 18px; line-height: 18px;
+}
+.layui-progress-text {
+	top: -18px; color: rgb(102, 102, 102); line-height: 18px; font-size: 12px; position: relative;
+}
+.layui-progress-big .layui-progress-text {
+	padding: 0px 10px; color: rgb(255, 255, 255); position: static;
+}
+.layui-collapse {
+	border-radius: 2px; border: 1px solid rgb(226, 226, 226); border-image: none;
+}
+.layui-colla-item {
+	border-top-color: rgb(226, 226, 226); border-top-width: 1px; border-top-style: solid;
+}
+:first-child.layui-colla-item {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.layui-colla-title {
+	padding: 0px 15px 0px 35px; height: 42px; color: rgb(51, 51, 51); line-height: 42px; position: relative; cursor: pointer; background-color: rgb(242, 242, 242);
+}
+.layui-colla-content {
+	padding: 10px 15px; color: rgb(102, 102, 102); line-height: 22px; border-top-color: rgb(226, 226, 226); border-top-width: 1px; border-top-style: solid; display: none;
+}
+.layui-colla-icon {
+	left: 15px; top: 0px; font-size: 14px; position: absolute;
+}
+.layui-bg-red {
+	background-color: rgb(255, 87, 34);
+}
+.layui-bg-orange {
+	background-color: rgb(247, 184, 36);
+}
+.layui-bg-green {
+	background-color: rgb(0, 150, 136);
+}
+.layui-bg-cyan {
+	background-color: rgb(47, 64, 86);
+}
+.layui-bg-blue {
+	background-color: rgb(30, 159, 255);
+}
+.layui-bg-black {
+	background-color: rgb(57, 61, 73);
+}
+.layui-bg-gray {
+	background-color: rgb(238, 238, 238);
+}
+.layui-word-aux {
+	padding: 0px 5px; color: rgb(153, 153, 153); font-size: 12px;
+}
+.layui-btn {
+	padding: 0px 18px; border-radius: 2px; border: currentColor; border-image: none; height: 38px; text-align: center; color: rgb(255, 255, 255); line-height: 38px; font-size: 14px; display: inline-block; white-space: nowrap; cursor: pointer; opacity: 0.9; background-color: rgb(0, 150, 136);
+}
+.layui-btn:hover {
+	color: rgb(255, 255, 255); opacity: 0.8;
+}
+.layui-btn:active {
+	opacity: 1;
+}
+.layui-btn + .layui-btn {
+	margin-left: 10px;
+}
+.layui-btn-radius {
+	border-radius: 100px;
+}
+.layui-btn .layui-icon {
+	font-size: 18px; vertical-align: bottom;
+}
+.layui-btn-primary {
+	border: 1px solid rgb(201, 201, 201); border-image: none; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255);
+}
+.layui-btn-primary:hover {
+	border-color: rgb(0, 150, 136); color: rgb(51, 51, 51);
+}
+.layui-btn-normal {
+	background-color: rgb(30, 159, 255);
+}
+.layui-btn-warm {
+	background-color: rgb(247, 184, 36);
+}
+.layui-btn-danger {
+	background-color: rgb(255, 87, 34);
+}
+.layui-btn-disabled {
+	border: 1px solid rgb(230, 230, 230); border-image: none; color: rgb(201, 201, 201); cursor: not-allowed; opacity: 1; background-color: rgb(251, 251, 251);
+}
+.layui-btn-disabled:active {
+	border: 1px solid rgb(230, 230, 230); border-image: none; color: rgb(201, 201, 201); cursor: not-allowed; opacity: 1; background-color: rgb(251, 251, 251);
+}
+.layui-btn-disabled:hover {
+	border: 1px solid rgb(230, 230, 230); border-image: none; color: rgb(201, 201, 201); cursor: not-allowed; opacity: 1; background-color: rgb(251, 251, 251);
+}
+.layui-btn-big {
+	padding: 0px 25px; height: 44px; line-height: 44px; font-size: 16px;
+}
+.layui-btn-small {
+	padding: 0px 10px; height: 30px; line-height: 30px; font-size: 12px;
+}
+.layui-btn-small i {
+	font-size: 16px !important;
+}
+.layui-btn-mini {
+	padding: 0px 5px; height: 22px; line-height: 22px; font-size: 12px;
+}
+.layui-btn-mini i {
+	font-size: 14px !important;
+}
+.layui-btn-group {
+	font-size: 0px; vertical-align: middle; display: inline-block;
+}
+.layui-btn-group .layui-btn {
+	border-radius: 0px; margin-right: 0px !important; margin-left: 0px !important; border-left-color: rgba(255, 255, 255, 0.5); border-left-width: 1px; border-left-style: solid;
+}
+.layui-btn-group .layui-btn-primary {
+	border-left-color: currentColor; border-left-width: medium; border-left-style: none;
+}
+.layui-btn-group .layui-btn-primary:hover {
+	border-color: rgb(201, 201, 201); color: rgb(0, 150, 136);
+}
+.layui-btn-group :first-child.layui-btn {
+	border-radius: 2px 0px 0px 2px; border-left-color: currentColor; border-left-width: medium; border-left-style: none;
+}
+.layui-btn-group :first-child.layui-btn-primary {
+	border-left-color: rgb(201, 201, 201); border-left-width: 1px; border-left-style: solid;
+}
+.layui-btn-group :last-child.layui-btn {
+	border-radius: 0px 2px 2px 0px;
+}
+.layui-btn-group .layui-btn + .layui-btn {
+	margin-left: 0px;
+}
+.layui-btn-group + .layui-btn-group {
+	margin-left: 10px;
+}
+.layui-input {
+	border-radius: 2px; border: 1px solid rgb(230, 230, 230); border-image: none; height: 38px; line-height: 38px; background-color: rgb(255, 255, 255);
+}
+.layui-select {
+	border-radius: 2px; border: 1px solid rgb(230, 230, 230); border-image: none; height: 38px; line-height: 38px; background-color: rgb(255, 255, 255);
+}
+.layui-textarea {
+	border-radius: 2px; border: 1px solid rgb(230, 230, 230); border-image: none; height: 38px; line-height: 38px; background-color: rgb(255, 255, 255);
+}
+.layui-form-label {
+	line-height: 20px; position: relative;
+}
+.layui-form-mid {
+	line-height: 20px; position: relative;
+}
+.layui-textarea {
+	line-height: 20px; position: relative;
+}
+.layui-input {
+	width: 100%; padding-left: 10px; display: block;
+}
+.layui-textarea {
+	width: 100%; padding-left: 10px; display: block;
+}
+.layui-input:hover {
+	border-color: rgb(210, 210, 210) !important;
+}
+.layui-textarea:hover {
+	border-color: rgb(210, 210, 210) !important;
+}
+.layui-input:focus {
+	border-color: rgb(201, 201, 201) !important;
+}
+.layui-textarea:focus {
+	border-color: rgb(201, 201, 201) !important;
+}
+.layui-textarea {
+	padding: 6px 10px; height: auto; min-height: 100px; resize: vertical;
+}
+.layui-select {
+	padding: 0px 10px;
+}
+.layui-form input[type=checkbox] {
+	display: none;
+}
+.layui-form input[type=radio] {
+	display: none;
+}
+.layui-form select {
+	display: none;
+}
+.layui-form-item {
+	clear: both; margin-bottom: 15px;
+}
+.layui-form-item::after {
+	height: 0px; clear: both; display: block; content: "\20";
+}
+.layui-form-label {
+	padding: 9px 15px; width: 80px; text-align: right; font-weight: 400; float: left; display: block;
+}
+.layui-form-item .layui-inline {
+	margin-right: 10px; margin-bottom: 5px;
+}
+.layui-input-block {
+	position: relative;
+}
+.layui-input-inline {
+	position: relative;
+}
+.layui-input-block {
+	margin-left: 110px; min-height: 36px;
+}
+.layui-input-inline {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-item .layui-input-inline {
+	width: 190px; margin-right: 10px; float: left;
+}
+.layui-form-text .layui-input-inline {
+	width: auto;
+}
+.layui-form-mid {
+	padding: 8px 0px; margin-right: 10px; float: left; display: block;
+}
+.layui-form-danger + .layui-form-select .layui-input {
+	border: 1px solid rgb(255, 87, 34) !important; border-image: none !important;
+}
+.layui-form-danger:focus {
+	border: 1px solid rgb(255, 87, 34) !important; border-image: none !important;
+}
+.layui-form-select {
+	position: relative;
+}
+.layui-form-select .layui-input {
+	padding-right: 30px; cursor: pointer;
+}
+.layui-form-select .layui-edge {
+	border-width: 6px; transition:0.3s; top: 50%; right: 10px; margin-top: -3px; border-top-color: rgb(194, 194, 194); border-top-style: solid; position: absolute; cursor: pointer; -webkit-transition: all .3s;
+}
+.layui-form-select dl {
+	padding: 5px 0px; border-radius: 2px; border: 1px solid rgb(210, 210, 210); border-image: none; left: 0px; top: 42px; display: none; position: absolute; z-index: 999; -ms-overflow-y: auto; max-height: 300px; min-width: 100%; box-sizing: border-box; box-shadow: 0px 2px 4px rgba(0,0,0,0.12); background-color: rgb(255, 255, 255);
+}
+.layui-form-select dl dd {
+	padding: 0px 10px; line-height: 36px; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-form-select dl dt {
+	padding: 0px 10px; line-height: 36px; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-form-select dl dt {
+	color: rgb(153, 153, 153); font-size: 12px;
+}
+.layui-form-select dl dd {
+	cursor: pointer;
+}
+.layui-form-select dl dd:hover {
+	background-color: rgb(242, 242, 242);
+}
+.layui-form-select .layui-select-group dd {
+	padding-left: 20px;
+}
+.layui-form-select dl dd.layui-this {
+	color: rgb(255, 255, 255); background-color: rgb(95, 184, 120);
+}
+.layui-form-checkbox {
+	background-color: rgb(255, 255, 255);
+}
+.layui-form-select dl dd.layui-disabled {
+	background-color: rgb(255, 255, 255);
+}
+.layui-form-selected dl {
+	display: block;
+}
+.layui-form-checkbox {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-checkbox * {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-radio {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-radio * {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-switch {
+	vertical-align: middle; display: inline-block;
+}
+.layui-form-selected .layui-edge {
+	margin-top: -9px; transform: rotate(180deg); -webkit-transform: rotate(180deg);
+}
+:root .layui-form-selected .layui-edge {
+	
+}
+.layui-select-none {
+	margin: 5px 0px; text-align: center; color: rgb(153, 153, 153);
+}
+.layui-select-disabled .layui-disabled {
+	border-color: rgb(238, 238, 238) !important;
+}
+.layui-select-disabled .layui-edge {
+	border-top-color: rgb(210, 210, 210);
+}
+.layui-form-checkbox {
+	border-radius: 2px; border: 1px solid rgb(210, 210, 210); transition:0.1s linear; border-image: none; height: 30px; line-height: 28px; padding-right: 30px; font-size: 0px; margin-right: 10px; position: relative; cursor: pointer; box-sizing: border-box !important; -webkit-transition: .1s linear;
+}
+.layui-form-checkbox:hover {
+	border: 1px solid rgb(194, 194, 194); border-image: none;
+}
+.layui-form-checkbox span {
+	padding: 0px 10px; height: 100%; color: rgb(255, 255, 255); overflow: hidden; font-size: 14px; white-space: nowrap; -ms-text-overflow: ellipsis; background-color: rgb(210, 210, 210);
+}
+.layui-form-checkbox:hover span {
+	background-color: rgb(194, 194, 194);
+}
+.layui-form-checkbox i {
+	width: 30px; text-align: center; right: 0px; color: rgb(255, 255, 255); font-size: 20px; position: absolute;
+}
+.layui-form-checkbox:hover i {
+	color: rgb(194, 194, 194);
+}
+.layui-form-checked {
+	border-color: rgb(95, 184, 120);
+}
+.layui-form-checked:hover {
+	border-color: rgb(95, 184, 120);
+}
+.layui-form-checked span {
+	background-color: rgb(95, 184, 120);
+}
+.layui-form-checked:hover span {
+	background-color: rgb(95, 184, 120);
+}
+.layui-form-checked i {
+	color: rgb(95, 184, 120);
+}
+.layui-form-checked:hover i {
+	color: rgb(95, 184, 120);
+}
+.layui-form-item .layui-form-checkbox {
+	margin-top: 4px;
+}
+[lay-skin=primary].layui-form-checkbox {
+	background: 0px 0px; border: currentColor !important; border-image: none !important; height: auto !important; line-height: normal !important; padding-right: 0px; margin-right: 0px;
+}
+[lay-skin=primary].layui-form-checkbox span {
+	background: 0px 0px; color: rgb(102, 102, 102); line-height: 18px; padding-right: 15px; float: right;
+}
+[lay-skin=primary].layui-form-checkbox i {
+	border-radius: 2px; border: 1px solid rgb(210, 210, 210); transition:0.1s linear; border-image: none; top: 0px; width: 16px; line-height: 16px; font-size: 12px; position: relative; background-color: rgb(255, 255, 255); -webkit-transition: .1s linear;
+}
+[lay-skin=primary].layui-form-checkbox:hover i {
+	border-color: rgb(95, 184, 120); color: rgb(255, 255, 255);
+}
+[lay-skin=primary].layui-form-checked i {
+	border-color: rgb(95, 184, 120); color: rgb(255, 255, 255); background-color: rgb(95, 184, 120);
+}
+[lay-skin=primary].layui-checkbox-disbaled span {
+	background: 0px 0px !important;
+}
+[lay-skin=primary].layui-checkbox-disbaled:hover i {
+	border-color: rgb(210, 210, 210);
+}
+.layui-form-item [lay-skin=primary].layui-form-checkbox {
+	margin-top: 10px;
+}
+.layui-form-switch {
+	padding: 0px 5px; border-radius: 20px; border: 1px solid rgb(210, 210, 210); transition:0.1s linear; border-image: none; width: 42px; height: 22px; line-height: 22px; margin-top: 8px; position: relative; cursor: pointer; background-color: rgb(255, 255, 255); -webkit-transition: .1s linear;
+}
+.layui-form-switch i {
+	border-radius: 20px; transition:0.1s linear; left: 5px; top: 3px; width: 16px; height: 16px; position: absolute; background-color: rgb(210, 210, 210); -webkit-transition: .1s linear;
+}
+.layui-form-switch em {
+	padding: 0px !important; top: 0px; width: 25px; text-align: center !important; right: 5px; color: rgb(153, 153, 153) !important; font-size: 12px; font-style: normal !important; position: absolute;
+}
+.layui-form-onswitch {
+	border-color: rgb(95, 184, 120); background-color: rgb(95, 184, 120);
+}
+.layui-form-onswitch i {
+	left: 32px; background-color: rgb(255, 255, 255);
+}
+.layui-form-onswitch em {
+	left: 5px; right: auto; color: rgb(255, 255, 255) !important;
+}
+.layui-checkbox-disbaled {
+	border-color: rgb(226, 226, 226) !important;
+}
+.layui-checkbox-disbaled span {
+	background-color: rgb(226, 226, 226) !important;
+}
+.layui-checkbox-disbaled:hover i {
+	color: rgb(255, 255, 255) !important;
+}
+.layui-form-radio {
+	margin: 6px 10px 0px 0px; line-height: 28px; padding-right: 10px; font-size: 0px; cursor: pointer;
+}
+.layui-form-radio i {
+	color: rgb(194, 194, 194); font-size: 22px; margin-right: 8px;
+}
+.layui-form-radio span {
+	font-size: 14px;
+}
+.layui-form-radio i:hover {
+	color: rgb(95, 184, 120);
+}
+.layui-form-radioed i {
+	color: rgb(95, 184, 120);
+}
+.layui-radio-disbaled i {
+	color: rgb(226, 226, 226) !important;
+}
+.layui-form-pane .layui-form-label {
+	padding: 8px 15px; border-radius: 2px 0px 0px 2px; border: 1px solid rgb(230, 230, 230); border-image: none; width: 110px; height: 38px; text-align: center; line-height: 20px; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis; box-sizing: border-box !important; background-color: rgb(251, 251, 251); -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-form-pane .layui-input-inline {
+	margin-left: -1px;
+}
+.layui-form-pane .layui-input-block {
+	left: -1px; margin-left: 110px;
+}
+.layui-form-pane .layui-input {
+	border-radius: 0px 2px 2px 0px;
+}
+.layui-form-pane .layui-form-text .layui-form-label {
+	border-radius: 2px; width: 100%; text-align: left; border-right-color: rgb(230, 230, 230); border-right-width: 1px; border-right-style: solid; float: none; box-sizing: border-box !important; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-laypage button {
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-laypage input {
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-nav {
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-form-pane .layui-form-text .layui-input-inline {
+	margin: 0px; top: -1px; clear: both; display: block;
+}
+.layui-form-pane .layui-form-text .layui-input-block {
+	margin: 0px; left: 0px; top: -1px;
+}
+.layui-form-pane .layui-form-text .layui-textarea {
+	border-radius: 0px 0px 2px 2px; min-height: 100px;
+}
+.layui-form-pane .layui-form-checkbox {
+	margin: 4px 0px 4px 10px;
+}
+.layui-form-pane .layui-form-radio {
+	margin-top: 6px; margin-left: 10px;
+}
+.layui-form-pane .layui-form-switch {
+	margin-top: 6px; margin-left: 10px;
+}
+.layui-form-pane [pane].layui-form-item {
+	border: 1px solid rgb(230, 230, 230); border-image: none; position: relative;
+}
+.layui-form-pane [pane].layui-form-item .layui-form-label {
+	border-width: 0px 1px 0px 0px; left: 0px; top: 0px; height: 100%; position: absolute;
+}
+.layui-form-pane [pane].layui-form-item .layui-input-inline {
+	margin-left: 110px;
+}
+.layui-layedit {
+	border-radius: 2px; border: 1px solid rgb(210, 210, 210); border-image: none;
+}
+.layui-layedit-tool {
+	padding: 3px 5px; font-size: 0px; border-bottom-color: rgb(226, 226, 226); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.layedit-tool-fixed {
+	top: 0px; border-top-color: rgb(226, 226, 226); border-top-width: 1px; border-top-style: solid; position: fixed;
+}
+.layui-layedit-tool .layedit-tool-mid {
+	text-align: center; font-size: 14px; vertical-align: middle; display: inline-block;
+}
+.layui-layedit-tool .layui-icon {
+	text-align: center; font-size: 14px; vertical-align: middle; display: inline-block;
+}
+.layui-layedit-tool .layui-icon {
+	margin: 3px 5px; border-radius: 2px; width: 32px; height: 30px; color: rgb(119, 119, 119); line-height: 30px; position: relative; cursor: pointer;
+}
+.layui-layedit-tool .layui-icon:hover {
+	color: rgb(57, 61, 73);
+}
+.layui-layedit-tool .layui-icon:active {
+	color: rgb(0, 0, 0);
+}
+.layui-layedit-tool .layedit-tool-active {
+	color: rgb(0, 0, 0); background-color: rgb(226, 226, 226);
+}
+.layui-layedit-tool .layui-disabled {
+	color: rgb(210, 210, 210); cursor: not-allowed;
+}
+.layui-layedit-tool .layui-disabled:hover {
+	color: rgb(210, 210, 210); cursor: not-allowed;
+}
+.layui-layedit-tool .layedit-tool-mid {
+	margin: 0px 10px; width: 1px; height: 18px; background-color: rgb(210, 210, 210);
+}
+.layedit-tool-html {
+	width: 50px !important; font-size: 30px !important;
+}
+.layedit-tool-b {
+	font-size: 16px !important;
+}
+.layedit-tool-code {
+	font-size: 16px !important;
+}
+.layedit-tool-help {
+	font-size: 16px !important;
+}
+.layedit-tool-d {
+	font-size: 18px !important;
+}
+.layedit-tool-face {
+	font-size: 18px !important;
+}
+.layedit-tool-image {
+	font-size: 18px !important;
+}
+.layedit-tool-unlink {
+	font-size: 18px !important;
+}
+.layedit-tool-image input {
+	left: 0px; top: 0px; width: 100%; height: 100%; font-size: 0px; position: absolute; cursor: pointer; opacity: 0.01;
+}
+.layui-layedit-iframe iframe {
+	width: 100%; display: block;
+}
+#LAY_layedit_code {
+	overflow: hidden;
+}
+.layui-table {
+	margin: 10px 0px; width: 100%; background-color: rgb(255, 255, 255);
+}
+.layui-table tr {
+	transition:0.3s; -webkit-transition: all .3s;
+}
+.layui-table thead tr {
+	background-color: rgb(242, 242, 242);
+}
+.layui-table th {
+	text-align: left;
+}
+.layui-table td {
+	padding: 9px 15px; border: 1px solid rgb(226, 226, 226); border-image: none; line-height: 20px; font-size: 14px; min-height: 20px;
+}
+.layui-table th {
+	padding: 9px 15px; border: 1px solid rgb(226, 226, 226); border-image: none; line-height: 20px; font-size: 14px; min-height: 20px;
+}
+.layui-table tr:hover {
+	background-color: rgb(248, 248, 248);
+}
+[lay-even].layui-table tr:nth-child(2n) {
+	background-color: rgb(248, 248, 248);
+}
+[lay-skin=line].layui-table {
+	border: 1px solid rgb(226, 226, 226); border-image: none;
+}
+[lay-skin=row].layui-table {
+	border: 1px solid rgb(226, 226, 226); border-image: none;
+}
+[lay-skin=line].layui-table td {
+	border-width: medium medium 1px; border-style: none none solid; border-color: currentColor currentColor rgb(226, 226, 226); border-image: none;
+}
+[lay-skin=line].layui-table th {
+	border-width: medium medium 1px; border-style: none none solid; border-color: currentColor currentColor rgb(226, 226, 226); border-image: none;
+}
+[lay-skin=row].layui-table td {
+	border-width: medium 1px medium medium; border-style: none solid none none; border-color: currentColor rgb(226, 226, 226) currentColor currentColor; border-image: none;
+}
+[lay-skin=row].layui-table th {
+	border-width: medium 1px medium medium; border-style: none solid none none; border-color: currentColor rgb(226, 226, 226) currentColor currentColor; border-image: none;
+}
+[lay-skin=nob].layui-table td {
+	border: currentColor; border-image: none;
+}
+[lay-skin=nob].layui-table th {
+	border: currentColor; border-image: none;
+}
+.layui-upload-button {
+	border-radius: 2px; border: 1px solid rgb(223, 223, 223); border-image: none; height: 38px; color: rgb(102, 102, 102); line-height: 38px; overflow: hidden; vertical-align: middle; display: inline-block; position: relative; min-width: 60px; background-color: rgb(255, 255, 255);
+}
+.layui-upload-button:hover {
+	border: 1px solid rgb(170, 170, 170); border-image: none; color: rgb(51, 51, 51);
+}
+.layui-upload-button:active {
+	border: 1px solid rgb(76, 175, 80); border-image: none; color: rgb(0, 0, 0);
+}
+.layui-upload-button input {
+	cursor: pointer; opacity: 0.01;
+}
+.layui-upload-file {
+	cursor: pointer; opacity: 0.01;
+}
+.layui-upload-button input {
+	left: 0px; top: 0px; width: 100%; height: 100%; font-size: 100px; position: absolute; z-index: 10;
+}
+.layui-upload-icon {
+	margin: 0px 15px; text-align: center; display: block;
+}
+.layui-upload-icon i {
+	color: rgb(95, 184, 120); font-size: 20px; margin-right: 5px; vertical-align: top;
+}
+.layui-upload-iframe {
+	border: 0px currentColor; border-image: none; width: 0px; height: 0px; visibility: hidden; position: absolute;
+}
+.layui-upload-enter {
+	border: 1px solid rgb(0, 158, 148); border-image: none; color: rgb(255, 255, 255); transform: scale(1.1); background-color: rgb(0, 158, 148); -webkit-transform: scale(1.1);
+}
+.layui-upload-enter .layui-upload-icon {
+	color: rgb(255, 255, 255);
+}
+.layui-upload-enter .layui-upload-icon i {
+	color: rgb(255, 255, 255);
+}
+.layui-flow-more {
+	margin: 10px 0px; text-align: center; color: rgb(153, 153, 153); font-size: 14px;
+}
+.layui-flow-more a {
+	height: 32px; line-height: 32px;
+}
+.layui-flow-more a * {
+	vertical-align: top; display: inline-block;
+}
+.layui-flow-more a cite {
+	padding: 0px 20px; border-radius: 3px; color: rgb(51, 51, 51); font-style: normal; background-color: rgb(238, 238, 238);
+}
+.layui-flow-more a cite:hover {
+	opacity: 0.8;
+}
+.layui-flow-more a i {
+	color: rgb(115, 115, 131); font-size: 30px;
+}
+.layui-laypage {
+	margin: 10px 0px; font-size: 0px; vertical-align: middle; display: inline-block;
+}
+.layui-laypage > :first-child {
+	border-radius: 2px 0px 0px 2px;
+}
+.layui-laypage > :first-child em {
+	border-radius: 2px 0px 0px 2px;
+}
+.layui-laypage > :last-child {
+	border-radius: 0px 2px 2px 0px;
+}
+.layui-laypage > :last-child em {
+	border-radius: 0px 2px 2px 0px;
+}
+.layui-laypage a {
+	margin: 0px -1px 5px 0px; padding: 0px 15px; border: 1px solid rgb(226, 226, 226); border-image: none; height: 28px; color: rgb(51, 51, 51); line-height: 28px; font-size: 12px; vertical-align: middle; display: inline-block; background-color: rgb(255, 255, 255);
+}
+.layui-laypage span {
+	margin: 0px -1px 5px 0px; padding: 0px 15px; border: 1px solid rgb(226, 226, 226); border-image: none; height: 28px; color: rgb(51, 51, 51); line-height: 28px; font-size: 12px; vertical-align: middle; display: inline-block; background-color: rgb(255, 255, 255);
+}
+.layui-laypage em {
+	font-style: normal;
+}
+.layui-laypage span {
+	color: rgb(153, 153, 153); font-weight: 700;
+}
+.layui-laypage .layui-laypage-curr {
+	position: relative;
+}
+.layui-laypage .layui-laypage-curr em {
+	color: rgb(255, 255, 255); font-weight: 400; position: relative;
+}
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+	padding: 1px; left: -1px; top: -1px; width: 100%; height: 100%; position: absolute; background-color: rgb(0, 150, 136);
+}
+.layui-laypage-em {
+	border-radius: 2px;
+}
+.layui-laypage-next em {
+	font-family: Sim sun; font-size: 16px;
+}
+.layui-laypage-prev em {
+	font-family: Sim sun; font-size: 16px;
+}
+.layui-laypage .layui-laypage-total {
+	border: currentColor; border-image: none; height: 30px; line-height: 30px; font-weight: 400; margin-left: 1px;
+}
+.layui-laypage button {
+	border-radius: 2px; border: 1px solid rgb(226, 226, 226); border-image: none; height: 30px; line-height: 30px; vertical-align: top; box-sizing: border-box !important; background-color: rgb(255, 255, 255);
+}
+.layui-laypage input {
+	border-radius: 2px; border: 1px solid rgb(226, 226, 226); border-image: none; height: 30px; line-height: 30px; vertical-align: top; box-sizing: border-box !important; background-color: rgb(255, 255, 255);
+}
+.layui-laypage input {
+	margin: 0px 5px; width: 50px; text-align: center;
+}
+.layui-laypage button {
+	padding: 0px 15px; margin-left: 5px; cursor: pointer;
+}
+.layui-code {
+	border-width: 1px 1px 1px 6px; border-style: solid; border-color: rgb(221, 221, 221); margin: 10px 0px; padding: 15px; border-image: none; color: rgb(51, 51, 51); line-height: 20px; font-family: Courier New; font-size: 12px; position: relative; background-color: rgb(242, 242, 242);
+}
+.layui-tree {
+	line-height: 26px;
+}
+.layui-tree li {
+	overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-tree li .layui-tree-spread {
+	height: 26px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.layui-tree li a {
+	height: 26px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.layui-tree li a {
+	font-size: 0px;
+}
+.layui-tree li a i {
+	font-size: 16px;
+}
+.layui-tree li a cite {
+	padding: 0px 6px; font-size: 14px; font-style: normal;
+}
+.layui-tree li i {
+	color: rgb(51, 51, 51); padding-left: 6px;
+}
+.layui-tree li .layui-tree-check {
+	font-size: 13px;
+}
+.layui-tree li .layui-tree-check:hover {
+	color: rgb(0, 158, 148);
+}
+.layui-tree li ul {
+	margin-left: 20px; display: none;
+}
+.layui-tree li .layui-tree-enter {
+	border: 1px dotted rgb(0, 0, 0); border-image: none; line-height: 24px;
+}
+.layui-tree-drag {
+	padding: 5px 10px; border: 1px dotted rgb(0, 0, 0); border-image: none; left: -666px; top: -666px; display: none; white-space: nowrap; position: absolute; background-color: rgb(242, 242, 242);
+}
+.layui-tree-drag i {
+	padding-right: 5px;
+}
+.layui-nav {
+	padding: 0px 20px; border-radius: 2px; color: rgb(194, 194, 194); font-size: 0px; position: relative; box-sizing: border-box !important; background-color: rgb(57, 61, 73);
+}
+.layui-nav * {
+	font-size: 14px;
+}
+.layui-nav .layui-nav-item {
+	line-height: 60px; vertical-align: middle; display: inline-block; position: relative;
+}
+.layui-nav .layui-nav-item a {
+	padding: 0px 20px; transition:0.3s; color: rgb(194, 194, 194); display: block; -webkit-transition: all .3s;
+}
+.layui-nav .layui-this::after {
+	transition:0.2s; left: 0px; top: 0px; width: 0px; height: 5px; position: absolute; background-color: rgb(95, 184, 120); -webkit-transition: all .2s;
+}
+.layui-nav-bar {
+	transition:0.2s; left: 0px; top: 0px; width: 0px; height: 5px; position: absolute; background-color: rgb(95, 184, 120); -webkit-transition: all .2s;
+}
+.layui-nav-tree .layui-nav-itemed::after {
+	transition:0.2s; left: 0px; top: 0px; width: 0px; height: 5px; position: absolute; background-color: rgb(95, 184, 120); -webkit-transition: all .2s;
+}
+.layui-nav-bar {
+	z-index: 1000;
+}
+.layui-nav .layui-nav-item a:hover {
+	color: rgb(255, 255, 255);
+}
+.layui-nav .layui-this a {
+	color: rgb(255, 255, 255);
+}
+.layui-nav .layui-this::after {
+	top: auto; width: 100%; bottom: 0px; content: "";
+}
+.layui-nav .layui-nav-more {
+	border-width: 6px; border-style: solid dashed dashed; border-color: rgb(194, 194, 194) transparent transparent; transition:0.2s; top: 28px; width: 0px; height: 0px; right: 3px; overflow: hidden; position: absolute; cursor: pointer; content: ""; -webkit-transition: all .2s;
+}
+.layui-nav .layui-nav-mored {
+	border-style: dashed dashed solid; border-color: transparent transparent rgb(194, 194, 194); top: 22px;
+}
+.layui-nav-itemed .layui-nav-more {
+	border-style: dashed dashed solid; border-color: transparent transparent rgb(194, 194, 194); top: 22px;
+}
+.layui-nav-child {
+	padding: 5px 0px; border-radius: 2px; border: 1px solid rgb(210, 210, 210); border-image: none; left: 0px; top: 65px; line-height: 36px; display: none; white-space: nowrap; position: absolute; z-index: 100; min-width: 100%; box-shadow: 0px 2px 4px rgba(0,0,0,0.12); background-color: rgb(255, 255, 255);
+}
+.layui-nav .layui-nav-child a {
+	color: rgb(51, 51, 51);
+}
+.layui-nav .layui-nav-child a:hover {
+	color: rgb(51, 51, 51); background-color: rgb(242, 242, 242);
+}
+.layui-nav-child dd {
+	position: relative;
+}
+.layui-nav-child dd.layui-this {
+	color: rgb(255, 255, 255); background-color: rgb(95, 184, 120);
+}
+.layui-nav-child dd.layui-this a {
+	color: rgb(255, 255, 255);
+}
+.layui-nav-child dd.layui-this::after {
+	display: none;
+}
+.layui-nav-tree {
+	padding: 0px; width: 200px;
+}
+.layui-nav-tree .layui-nav-item {
+	width: 100%; line-height: 45px; display: block;
+}
+.layui-nav-tree .layui-nav-item a {
+	height: 45px; overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-nav-tree .layui-nav-item a:hover {
+	background-color: rgb(78, 84, 101);
+}
+.layui-nav-tree .layui-nav-child dd.layui-this {
+	color: rgb(255, 255, 255); background-color: rgb(0, 150, 136);
+}
+.layui-nav-tree .layui-this {
+	color: rgb(255, 255, 255); background-color: rgb(0, 150, 136);
+}
+.layui-nav-tree .layui-this > a {
+	color: rgb(255, 255, 255); background-color: rgb(0, 150, 136);
+}
+.layui-nav-tree .layui-this > a:hover {
+	color: rgb(255, 255, 255); background-color: rgb(0, 150, 136);
+}
+.layui-nav-tree .layui-this::after {
+	display: none;
+}
+.layui-nav-itemed > a {
+	color: rgb(255, 255, 255) !important; background-color: rgb(43, 46, 55) !important;
+}
+.layui-nav-tree .layui-nav-title a {
+	color: rgb(255, 255, 255) !important; background-color: rgb(43, 46, 55) !important;
+}
+.layui-nav-tree .layui-nav-title a:hover {
+	color: rgb(255, 255, 255) !important; background-color: rgb(43, 46, 55) !important;
+}
+.layui-nav-tree .layui-nav-bar {
+	width: 5px; height: 0px; background-color: rgb(0, 150, 136);
+}
+.layui-nav-tree .layui-nav-child {
+	border: currentColor; border-image: none; top: 0px; position: relative; z-index: 0; box-shadow: none;
+}
+.layui-nav-tree .layui-nav-child a {
+	height: 40px; color: rgb(194, 194, 194); line-height: 40px;
+}
+.layui-nav-tree .layui-nav-child {
+	background: 0px 0px; color: rgb(255, 255, 255);
+}
+.layui-nav-tree .layui-nav-child a:hover {
+	background: 0px 0px; color: rgb(255, 255, 255);
+}
+.layui-nav-tree .layui-nav-more {
+	top: 20px; right: 10px;
+}
+.layui-nav-itemed .layui-nav-more {
+	top: 14px;
+}
+.layui-nav-itemed .layui-nav-child {
+	padding: 0px; display: block;
+}
+.layui-nav-side {
+	left: 0px; top: 0px; bottom: 0px; position: fixed; z-index: 999; -ms-overflow-x: hidden;
+}
+.layui-breadcrumb {
+	font-size: 0px; visibility: hidden;
+}
+.layui-breadcrumb a {
+	color: rgb(51, 51, 51) !important; line-height: 22px; padding-right: 8px; font-size: 14px;
+}
+.layui-breadcrumb a:hover {
+	color: rgb(1, 170, 237) !important;
+}
+.layui-breadcrumb a cite {
+	color: rgb(102, 102, 102); font-style: normal; cursor: text;
+}
+.layui-breadcrumb a span {
+	color: rgb(102, 102, 102); font-style: normal; cursor: text;
+}
+.layui-breadcrumb a span {
+	padding-left: 8px; font-family: Sim sun;
+}
+.layui-tab {
+	margin: 10px 0px; text-align: left !important;
+}
+.layui-fixbar li {
+	text-align: center; cursor: pointer;
+}
+.layui-tab-bar {
+	text-align: center; cursor: pointer;
+}
+.layui-tab-title li {
+	text-align: center; cursor: pointer;
+}
+.layui-util-face ul li {
+	text-align: center; cursor: pointer;
+}
+[overflow].layui-tab > .layui-tab-title {
+	overflow: hidden;
+}
+.layui-tab-title {
+	transition:0.2s; left: 0px; height: 40px; font-size: 0px; border-bottom-color: rgb(226, 226, 226); border-bottom-width: 1px; border-bottom-style: solid; white-space: nowrap; position: relative; -webkit-transition: all .2s;
+}
+.layui-tab-title li {
+	padding: 0px 10px; transition:0.2s; line-height: 40px; font-size: 14px; vertical-align: middle; display: inline-block; position: relative; min-width: 65px; -webkit-transition: all .2s;
+}
+.layui-tab-title li a {
+	display: block;
+}
+.layui-tab-title .layui-this {
+	color: rgb(0, 0, 0);
+}
+.layui-tab-title .layui-this::after {
+	border-width: 1px; border-style: solid; border-color: rgb(226, 226, 226) rgb(226, 226, 226) rgb(255, 255, 255); border-radius: 2px 2px 0px 0px; border-image: none; left: 0px; top: 0px; width: 100%; height: 41px; position: absolute; content: ""; box-sizing: border-box !important; pointer-events: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box;
+}
+.layui-tab-bar {
+	border-radius: 2px; border: 1px solid rgb(226, 226, 226); border-image: none; top: 0px; width: 30px; height: 39px; right: 0px; line-height: 39px; position: absolute; z-index: 10; background-color: rgb(255, 255, 255);
+}
+.layui-tab-bar .layui-icon {
+	transition:0.3s; top: 3px; display: inline-block; position: relative; -webkit-transition: all .3s;
+}
+.layui-tab-item {
+	display: none;
+}
+.layui-util-face .layui-layer-TipsG {
+	display: none;
+}
+.layui-tab-more {
+	height: auto; padding-right: 30px; white-space: normal;
+}
+.layui-tab-more li.layui-this::after {
+	border-radius: 2px; border-bottom-color: rgb(226, 226, 226);
+}
+.layui-tab-more .layui-tab-bar .layui-icon {
+	top: -2px; transform: rotate(180deg); -webkit-transform: rotate(180deg);
+}
+:root .layui-tab-more .layui-tab-bar .layui-icon {
+	
+}
+.layui-tab-content {
+	padding: 10px;
+}
+.layui-tab-title li .layui-tab-close {
+	transition:0.2s; top: 1px; color: rgb(194, 194, 194); margin-left: 8px; position: relative; -webkit-transition: all .2s;
+}
+.layui-tab-title li .layui-tab-close:hover {
+	border-radius: 2px; color: rgb(255, 255, 255); background-color: rgb(255, 87, 34);
+}
+.layui-tab-brief > .layui-tab-title .layui-this {
+	color: rgb(0, 150, 136);
+}
+.layui-tab-brief > .layui-tab-more li.layui-this::after {
+	border-width: medium medium 3px; border-style: none none solid; border-color: currentColor currentColor rgb(95, 184, 120); border-radius: 0px; border-image: none;
+}
+.layui-tab-brief > .layui-tab-title .layui-this::after {
+	border-width: medium medium 3px; border-style: none none solid; border-color: currentColor currentColor rgb(95, 184, 120); border-radius: 0px; border-image: none;
+}
+[overflow].layui-tab-brief > .layui-tab-title .layui-this::after {
+	top: -1px;
+}
+.layui-tab-card {
+	border-radius: 2px; border: 1px solid rgb(226, 226, 226); border-image: none; box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+.layui-tab-card > .layui-tab-title {
+	background-color: rgb(242, 242, 242);
+}
+.layui-tab-card > .layui-tab-title li {
+	margin-right: -1px; margin-left: -1px;
+}
+.layui-tab-card > .layui-tab-title .layui-this {
+	background-color: rgb(255, 255, 255);
+}
+.layui-tab-card > .layui-tab-title .layui-this::after {
+	border-width: 1px; border-top-color: currentColor; border-bottom-color: rgb(255, 255, 255); border-top-style: none;
+}
+.layui-tab-card > .layui-tab-title .layui-tab-bar {
+	border-radius: 0px; height: 40px; line-height: 40px; border-top-color: currentColor; border-right-color: currentColor; border-top-width: medium; border-right-width: medium; border-top-style: none; border-right-style: none;
+}
+.layui-tab-card > .layui-tab-more .layui-this {
+	background: 0px 0px; color: rgb(95, 184, 120);
+}
+.layui-tab-card > .layui-tab-more .layui-this::after {
+	border: currentColor; border-image: none;
+}
+.layui-fixbar {
+	right: 15px; bottom: 15px; position: fixed; z-index: 9999;
+}
+.layui-fixbar li {
+	border-radius: 2px; width: 50px; height: 50px; color: rgb(255, 255, 255); line-height: 50px; font-size: 30px; margin-bottom: 1px; opacity: 0.95; background-color: rgb(159, 159, 159);
+}
+.layui-fixbar li:hover {
+	opacity: 0.85;
+}
+.layui-fixbar li:active {
+	opacity: 1;
+}
+.layui-fixbar .layui-fixbar-top {
+	font-size: 40px; display: none;
+}
+body .layui-util-face {
+	background: 0px 0px; border: currentColor; border-image: none;
+}
+body .layui-util-face .layui-layer-content {
+	padding: 0px; color: rgb(102, 102, 102); box-shadow: none; background-color: rgb(255, 255, 255);
+}
+.layui-util-face ul {
+	padding: 10px; border: 1px solid rgb(217, 217, 217); border-image: none; width: 372px; position: relative; box-shadow: 0px 0px 20px rgba(0,0,0,0.2); background-color: rgb(255, 255, 255);
+}
+.layui-util-face ul li {
+	margin: -1px 0px 0px -1px; padding: 4px 2px; border: 1px solid rgb(232, 232, 232); border-image: none; width: 26px; height: 22px; overflow: hidden; float: left;
+}
+.layui-util-face ul li:hover {
+	background: rgb(255, 249, 236); border: 1px solid rgb(235, 115, 80); border-image: none; position: relative; z-index: 2;
+}
+.layui-anim {
+	animation-duration: 0.3s; animation-fill-mode: both; -webkit-animation-fill-mode: both; -webkit-animation-duration: .3s;
+}
+.layui-anim-loop {
+	animation-iteration-count: infinite; -webkit-animation-iteration-count: infinite;
+}
+.layui-anim-rotate {
+	animation-name: layui-rotate; animation-duration: 1s; animation-timing-function: linear; -webkit-animation-duration: 1s; -webkit-animation-name: layui-rotate; -webkit-animation-timing-function: linear;
+}
+.layui-anim-up {
+	animation-name: layui-up; -webkit-animation-name: layui-up;
+}
+.layui-anim-upbit {
+	animation-name: layui-upbit; -webkit-animation-name: layui-upbit;
+}
+.layui-anim-scale {
+	animation-name: layui-scale; -webkit-animation-name: layui-scale;
+}
+.layui-anim-scaleSpring {
+	animation-name: layui-scale-spring; -webkit-animation-name: layui-scale-spring;
+}
+@media screen and (max-width:450px)
+{
+.layui-form-item .layui-form-label {
+	overflow: hidden; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.layui-form-item .layui-inline {
+	clear: both; margin-right: 0px; margin-bottom: 20px; display: block;
+}
+.layui-form-item .layui-inline::after {
+	height: 0px; clear: both; display: block; content: "\20";
+}
+.layui-form-item .layui-input-inline {
+	margin: 0px 0px 10px 112px; left: -3px; width: auto; float: none; display: block;
+}
+.layui-form-item .layui-input-inline + .layui-form-mid {
+	padding: 0px; top: -5px; margin-left: 110px;
+}
+.layui-form-item .layui-form-checkbox {
+	margin-right: 5px; margin-bottom: 5px;
+}
+}

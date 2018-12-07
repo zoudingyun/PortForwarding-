@@ -1,0 +1,447 @@
+.ball-pulse > div:nth-child() {
+	animation:scale 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) infinite; -webkit-animation: scale 0.75s 0s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.ball-pulse > div:nth-child(1) {
+	animation:scale 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.12s infinite; -webkit-animation: scale 0.75s 0.12s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.ball-pulse > div:nth-child(2) {
+	animation:scale 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.24s infinite; -webkit-animation: scale 0.75s 0.24s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.ball-pulse > div:nth-child(3) {
+	animation:scale 0.75s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.36s infinite; -webkit-animation: scale 0.75s 0.36s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.ball-pulse > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; display: inline-block; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-pulse-sync > div:nth-child() {
+	animation:ball-pulse-sync 0.6s ease-in-out infinite; -webkit-animation: ball-pulse-sync 0.6s 0s infinite ease-in-out;
+}
+.ball-pulse-sync > div:nth-child(1) {
+	animation:ball-pulse-sync 0.6s ease-in-out 0.07s infinite; -webkit-animation: ball-pulse-sync 0.6s 0.07s infinite ease-in-out;
+}
+.ball-pulse-sync > div:nth-child(2) {
+	animation:ball-pulse-sync 0.6s ease-in-out 0.14s infinite; -webkit-animation: ball-pulse-sync 0.6s 0.14s infinite ease-in-out;
+}
+.ball-pulse-sync > div:nth-child(3) {
+	animation:ball-pulse-sync 0.6s ease-in-out 0.21s infinite; -webkit-animation: ball-pulse-sync 0.6s 0.21s infinite ease-in-out;
+}
+.ball-pulse-sync > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; display: inline-block; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-scale > div {
+	margin: 2px; border-radius: 100%; animation:ball-scale 1s ease-in-out infinite; width: 60px; height: 60px; display: inline-block; background-color: rgb(255, 255, 255); -webkit-animation: ball-scale 1s 0s ease-in-out infinite; -webkit-animation-fill-mode: both;
+}
+.ball-rotate {
+	position: relative;
+}
+.ball-rotate > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; position: relative; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-rotate > div:first-child {
+	animation:rotate 1s cubic-bezier(0.7, -0.13, 0.22, 0.86) infinite; -webkit-animation: rotate 1s 0s cubic-bezier(.7, -.13, .22, .86) infinite;
+}
+.ball-rotate > div::before {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; position: absolute; content: ""; opacity: 0.8; background-color: rgb(255, 255, 255);
+}
+.ball-rotate > div::after {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; position: absolute; content: ""; opacity: 0.8; background-color: rgb(255, 255, 255);
+}
+.ball-rotate > div::before {
+	left: -28px; top: 0px;
+}
+.ball-rotate > div::after {
+	left: 25px; top: 0px;
+}
+.ball-clip-rotate > div {
+	background: none !important; border-width: 2px; border-style: solid; border-color: rgb(255, 255, 255) rgb(255, 255, 255) transparent; margin: 2px; border-radius: 100%; animation:rotate 0.75s linear infinite; border-image: none; width: 25px; height: 25px; display: inline-block; -webkit-animation: rotate 0.75s 0s linear infinite; -webkit-animation-fill-mode: both;
+}
+.ball-clip-rotate-pulse {
+	position: relative; transform: translateY(-15px); -webkit-transform: translateY(-15px);
+}
+.ball-clip-rotate-pulse > div {
+	border-radius: 100%; left: 0px; top: 0px; position: absolute; animation-fill-mode: both; -webkit-animation-fill-mode: both;
+}
+.ball-clip-rotate-pulse > div:first-child {
+	background: rgb(255, 255, 255); animation:scale 1s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; left: 9px; top: 9px; width: 16px; height: 16px; -webkit-animation: scale 1s 0s cubic-bezier(.09, .57, .49, .9) infinite;
+}
+.ball-clip-rotate-pulse > div:last-child {
+	background: none; border-width: 2px; border-style: solid; border-color: rgb(255, 255, 255) transparent; animation:rotate 1s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; border-image: none; width: 30px; height: 30px; position: absolute; -webkit-animation: rotate 1s 0s cubic-bezier(.09, .57, .49, .9) infinite; -webkit-animation-duration: 1s;
+}
+.ball-clip-rotate-multiple {
+	position: relative;
+}
+.ball-clip-rotate-multiple > div {
+	border-width: 2px; border-style: solid; border-color: transparent rgb(255, 255, 255); border-radius: 100%; animation:rotate 1s ease-in-out infinite; border-image: none; left: 0px; top: 0px; width: 35px; height: 35px; position: absolute; -webkit-animation: rotate 1s 0s ease-in-out infinite; -webkit-animation-fill-mode: both;
+}
+.ball-clip-rotate-multiple > div:last-child {
+	border-color: rgb(255, 255, 255) transparent; left: 10px; top: 10px; width: 15px; height: 15px; display: inline-block; animation-duration: 0.5s; animation-direction: reverse; -webkit-animation-duration: 0.5s; -webkit-animation-direction: reverse;
+}
+.ball-scale-ripple > div {
+	border-radius: 100%; border: 2px solid rgb(255, 255, 255); animation:ball-scale-ripple 1s cubic-bezier(0.21, 0.53, 0.56, 0.8) infinite; border-image: none; width: 50px; height: 50px; -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21, .53, .56, .8); -webkit-animation-fill-mode: both;
+}
+.ball-scale-ripple-multiple {
+	position: relative; transform: translateY(-25px); -webkit-transform: translateY(-25px);
+}
+.ball-scale-ripple-multiple > div:nth-child() {
+	animation-delay: -0.2s; -webkit-animation-delay: -0.2s;
+}
+.ball-scale-ripple-multiple > div:nth-child(1) {
+	animation-delay: 0s; -webkit-animation-delay: 0s;
+}
+.ball-scale-ripple-multiple > div:nth-child(2) {
+	animation-delay: 0.2s; -webkit-animation-delay: 0.2s;
+}
+.ball-scale-ripple-multiple > div:nth-child(3) {
+	animation-delay: 0.4s; -webkit-animation-delay: 0.4s;
+}
+.ball-scale-ripple-multiple > div {
+	border-radius: 100%; border: 2px solid rgb(255, 255, 255); animation:ball-scale-ripple-multiple 1.25s cubic-bezier(0.21, 0.53, 0.56, 0.8) infinite; border-image: none; left: 0px; top: 0px; width: 50px; height: 50px; position: absolute; -webkit-animation: ball-scale-ripple-multiple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8); -webkit-animation-fill-mode: both;
+}
+.ball-beat > div {
+	margin: 2px; border-radius: 100%; animation:ball-beat 0.7s linear infinite; width: 15px; height: 15px; display: inline-block; background-color: rgb(255, 255, 255); -webkit-animation: ball-beat 0.7s 0s infinite linear; -webkit-animation-fill-mode: both;
+}
+.ball-beat > div:nth-child(2n-1) {
+	animation-delay: 0.35s !important; -webkit-animation-delay: 0.35s;
+}
+.ball-scale-multiple {
+	position: relative; transform: translateY(-30px); -webkit-transform: translateY(-30px);
+}
+.ball-scale-multiple > div:nth-child(2) {
+	animation-delay: 0.2s; -webkit-animation-delay: 0.2s;
+}
+.ball-scale-multiple > div:nth-child(3) {
+	animation-delay: 0.4s; -webkit-animation-delay: 0.4s;
+}
+.ball-scale-multiple > div {
+	margin: 0px; border-radius: 100%; animation:ball-scale-multiple 1s linear infinite; left: 0px; top: 0px; width: 60px; height: 60px; position: absolute; opacity: 0; background-color: rgb(255, 255, 255); -webkit-animation: ball-scale-multiple 1s 0s linear infinite; -webkit-animation-fill-mode: both;
+}
+.ball-triangle-path {
+	position: relative; transform: translate(-25px, -25px); -webkit-transform: translate(-25px, -25px);
+}
+.ball-triangle-path > div:nth-child(1) {
+	animation-name: ball-triangle-path-1; animation-duration: 2s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: infinite; -webkit-animation-duration: 2s; -webkit-animation-delay: 0; -webkit-animation-name: ball-triangle-path-1; -webkit-animation-timing-function: ease-in-out; -webkit-animation-iteration-count: infinite;
+}
+.ball-triangle-path > div:nth-child(2) {
+	animation-name: ball-triangle-path-2; animation-duration: 2s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: infinite; -webkit-animation-duration: 2s; -webkit-animation-delay: 0; -webkit-animation-name: ball-triangle-path-2; -webkit-animation-timing-function: ease-in-out; -webkit-animation-iteration-count: infinite;
+}
+.ball-triangle-path > div:nth-child(3) {
+	animation-name: ball-triangle-path-3; animation-duration: 2s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: infinite; -webkit-animation-duration: 2s; -webkit-animation-delay: 0; -webkit-animation-name: ball-triangle-path-3; -webkit-animation-timing-function: ease-in-out; -webkit-animation-iteration-count: infinite;
+}
+.ball-triangle-path > div {
+	border-radius: 100%; border: 1px solid rgb(255, 255, 255); border-image: none; width: 10px; height: 10px; position: absolute; animation-fill-mode: both; -webkit-animation-fill-mode: both;
+}
+.ball-triangle-path > div:nth-of-type(1) {
+	top: 50px;
+}
+.ball-triangle-path > div:nth-of-type(2) {
+	left: 25px;
+}
+.ball-triangle-path > div:nth-of-type(3) {
+	left: 50px; top: 50px;
+}
+.ball-pulse-rise > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; display: inline-block; animation-duration: 1s; animation-timing-function: cubic-bezier(0.15, 0.46, 0.9, 0.6); animation-delay: 0s; animation-iteration-count: infinite; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both; -webkit-animation-duration: 1s; -webkit-animation-delay: 0; -webkit-animation-timing-function: cubic-bezier(.15, .46, .9, .6); -webkit-animation-iteration-count: infinite;
+}
+.ball-pulse-rise > div:nth-child(2n) {
+	animation-name: ball-pulse-rise-even; -webkit-animation-name: ball-pulse-rise-even;
+}
+.ball-pulse-rise > div:nth-child(2n-1) {
+	animation-name: ball-pulse-rise-odd; -webkit-animation-name: ball-pulse-rise-odd;
+}
+.ball-grid-beat {
+	width: 57px;
+}
+.ball-grid-beat > div:nth-child(1) {
+	animation-duration: 0.96s; animation-delay: 0.36s; -webkit-animation-duration: 0.96s; -webkit-animation-delay: 0.36s;
+}
+.ball-grid-beat > div:nth-child(2) {
+	animation-duration: 0.93s; animation-delay: 0.4s; -webkit-animation-duration: 0.93s; -webkit-animation-delay: 0.4s;
+}
+.ball-grid-beat > div:nth-child(3) {
+	animation-duration: 1.19s; animation-delay: 0.68s; -webkit-animation-duration: 1.19s; -webkit-animation-delay: 0.68s;
+}
+.ball-grid-beat > div:nth-child(4) {
+	animation-duration: 1.13s; animation-delay: 0.41s; -webkit-animation-duration: 1.13s; -webkit-animation-delay: 0.41s;
+}
+.ball-grid-beat > div:nth-child(5) {
+	animation-duration: 1.34s; animation-delay: 0.71s; -webkit-animation-duration: 1.34s; -webkit-animation-delay: 0.71s;
+}
+.ball-grid-beat > div:nth-child(6) {
+	animation-duration: 0.94s; animation-delay: -0.15s; -webkit-animation-duration: 0.94s; -webkit-animation-delay: -0.15s;
+}
+.ball-grid-beat > div:nth-child(7) {
+	animation-duration: 1.2s; animation-delay: -0.12s; -webkit-animation-duration: 1.2s; -webkit-animation-delay: -0.12s;
+}
+.ball-grid-beat > div:nth-child(8) {
+	animation-duration: 0.82s; animation-delay: 0.01s; -webkit-animation-duration: 0.82s; -webkit-animation-delay: 0.01s;
+}
+.ball-grid-beat > div:nth-child(9) {
+	animation-duration: 1.19s; animation-delay: 0.32s; -webkit-animation-duration: 1.19s; -webkit-animation-delay: 0.32s;
+}
+.ball-grid-beat > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; float: left; display: inline-block; animation-name: ball-grid-beat; animation-delay: 0s; animation-iteration-count: infinite; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both; -webkit-animation-delay: 0; -webkit-animation-name: ball-grid-beat; -webkit-animation-iteration-count: infinite;
+}
+.ball-grid-pulse {
+	width: 57px;
+}
+.ball-grid-pulse > div:nth-child(1) {
+	animation-duration: 0.72s; animation-delay: -0.06s; -webkit-animation-duration: 0.72s; -webkit-animation-delay: -0.06s;
+}
+.ball-grid-pulse > div:nth-child(2) {
+	animation-duration: 1.02s; animation-delay: 0.25s; -webkit-animation-duration: 1.02s; -webkit-animation-delay: 0.25s;
+}
+.ball-grid-pulse > div:nth-child(3) {
+	animation-duration: 1.28s; animation-delay: -0.17s; -webkit-animation-duration: 1.28s; -webkit-animation-delay: -0.17s;
+}
+.ball-grid-pulse > div:nth-child(4) {
+	animation-duration: 1.42s; animation-delay: 0.48s; -webkit-animation-duration: 1.42s; -webkit-animation-delay: 0.48s;
+}
+.ball-grid-pulse > div:nth-child(5) {
+	animation-duration: 1.45s; animation-delay: 0.31s; -webkit-animation-duration: 1.45s; -webkit-animation-delay: 0.31s;
+}
+.ball-grid-pulse > div:nth-child(6) {
+	animation-duration: 1.18s; animation-delay: 0.03s; -webkit-animation-duration: 1.18s; -webkit-animation-delay: 0.03s;
+}
+.ball-grid-pulse > div:nth-child(7) {
+	animation-duration: 0.87s; animation-delay: 0.46s; -webkit-animation-duration: 0.87s; -webkit-animation-delay: 0.46s;
+}
+.ball-grid-pulse > div:nth-child(8) {
+	animation-duration: 1.45s; animation-delay: 0.78s; -webkit-animation-duration: 1.45s; -webkit-animation-delay: 0.78s;
+}
+.ball-grid-pulse > div:nth-child(9) {
+	animation-duration: 1.06s; animation-delay: 0.45s; -webkit-animation-duration: 1.06s; -webkit-animation-delay: 0.45s;
+}
+.ball-grid-pulse > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; float: left; display: inline-block; animation-name: ball-grid-pulse; animation-delay: 0s; animation-iteration-count: infinite; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both; -webkit-animation-delay: 0; -webkit-animation-name: ball-grid-pulse; -webkit-animation-iteration-count: infinite;
+}
+.ball-spin-fade-loader {
+	position: relative;
+}
+.ball-spin-fade-loader > div:nth-child(1) {
+	animation:ball-spin-fade-loader 1s linear infinite; left: 0px; top: 25px; -webkit-animation: ball-spin-fade-loader 1s 0s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(2) {
+	animation:ball-spin-fade-loader 1s linear 0.12s infinite; left: 17.04px; top: 17.04px; -webkit-animation: ball-spin-fade-loader 1s 0.12s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(3) {
+	animation:ball-spin-fade-loader 1s linear 0.24s infinite; left: 25px; top: 0px; -webkit-animation: ball-spin-fade-loader 1s 0.24s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(4) {
+	animation:ball-spin-fade-loader 1s linear 0.36s infinite; left: 17.04px; top: -17.04px; -webkit-animation: ball-spin-fade-loader 1s 0.36s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(5) {
+	animation:ball-spin-fade-loader 1s linear 0.48s infinite; left: 0px; top: -25px; -webkit-animation: ball-spin-fade-loader 1s 0.48s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(6) {
+	animation:ball-spin-fade-loader 1s linear 0.6s infinite; left: -17.04px; top: -17.04px; -webkit-animation: ball-spin-fade-loader 1s 0.6s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(7) {
+	animation:ball-spin-fade-loader 1s linear 0.72s infinite; left: -25px; top: 0px; -webkit-animation: ball-spin-fade-loader 1s 0.72s infinite linear;
+}
+.ball-spin-fade-loader > div:nth-child(8) {
+	animation:ball-spin-fade-loader 1s linear 0.84s infinite; left: -17.04px; top: 17.04px; -webkit-animation: ball-spin-fade-loader 1s 0.84s infinite linear;
+}
+.ball-spin-fade-loader > div {
+	margin: 2px; border-radius: 100%; width: 15px; height: 15px; position: absolute; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-spin-loader {
+	position: relative;
+}
+.ball-spin-loader > span:nth-child(1) {
+	animation:ball-spin-loader 2s linear 0.9s infinite; left: 0px; top: 45px; -webkit-animation: ball-spin-loader 2s 0.9s infinite linear;
+}
+.ball-spin-loader > span:nth-child(2) {
+	animation:ball-spin-loader 2s linear 1.8s infinite; left: 30.68px; top: 30.68px; -webkit-animation: ball-spin-loader 2s 1.8s infinite linear;
+}
+.ball-spin-loader > span:nth-child(3) {
+	animation:ball-spin-loader 2s linear 2.7s infinite; left: 45px; top: 0px; -webkit-animation: ball-spin-loader 2s 2.7s infinite linear;
+}
+.ball-spin-loader > span:nth-child(4) {
+	animation:ball-spin-loader 2s linear 3.6s infinite; left: 30.68px; top: -30.68px; -webkit-animation: ball-spin-loader 2s 3.6s infinite linear;
+}
+.ball-spin-loader > span:nth-child(5) {
+	animation:ball-spin-loader 2s linear 4.5s infinite; left: 0px; top: -45px; -webkit-animation: ball-spin-loader 2s 4.5s infinite linear;
+}
+.ball-spin-loader > span:nth-child(6) {
+	animation:ball-spin-loader 2s linear 5.4s infinite; left: -30.68px; top: -30.68px; -webkit-animation: ball-spin-loader 2s 5.4s infinite linear;
+}
+.ball-spin-loader > span:nth-child(7) {
+	animation:ball-spin-loader 2s linear 6.3s infinite; left: -45px; top: 0px; -webkit-animation: ball-spin-loader 2s 6.3s infinite linear;
+}
+.ball-spin-loader > span:nth-child(8) {
+	animation:ball-spin-loader 2s linear 7.2s infinite; left: -30.68px; top: 30.68px; -webkit-animation: ball-spin-loader 2s 7.2s infinite linear;
+}
+.ball-spin-loader > div {
+	background: green; border-radius: 100%; width: 15px; height: 15px; position: absolute; animation-fill-mode: both; -webkit-animation-fill-mode: both;
+}
+.ball-zig-zag {
+	position: relative; transform: translate(-15px, -15px); -webkit-transform: translate(-15px, -15px);
+}
+.ball-zig-zag > div {
+	margin: 2px 2px 2px 15px; border-radius: 100%; left: 30px; top: 30px; width: 15px; height: 15px; position: absolute; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-zig-zag > div:first-child {
+	animation:ball-zig 0.7s linear infinite; -webkit-animation: ball-zig 0.7s 0s infinite linear;
+}
+.ball-zig-zag > div:last-child {
+	animation:ball-zag 0.7s linear infinite; -webkit-animation: ball-zag 0.7s 0s infinite linear;
+}
+.ball-zig-zag-deflect {
+	position: relative; transform: translate(-15px, -15px); -webkit-transform: translate(-15px, -15px);
+}
+.ball-zig-zag-deflect > div {
+	margin: 2px 2px 2px 15px; border-radius: 100%; left: 30px; top: 30px; width: 15px; height: 15px; position: absolute; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.ball-zig-zag-deflect > div:first-child {
+	animation:ball-zig-deflect 1.5s linear infinite; -webkit-animation: ball-zig-deflect 1.5s 0s infinite linear;
+}
+.ball-zig-zag-deflect > div:last-child {
+	animation:ball-zag-deflect 1.5s linear infinite; -webkit-animation: ball-zag-deflect 1.5s 0s infinite linear;
+}
+.line-scale > div:nth-child(1) {
+	animation:line-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.1s infinite; -webkit-animation: line-scale 1s 0.1s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.line-scale > div:nth-child(2) {
+	animation:line-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.2s infinite; -webkit-animation: line-scale 1s 0.2s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.line-scale > div:nth-child(3) {
+	animation:line-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.3s infinite; -webkit-animation: line-scale 1s 0.3s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.line-scale > div:nth-child(4) {
+	animation:line-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.4s infinite; -webkit-animation: line-scale 1s 0.4s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.line-scale > div:nth-child(5) {
+	animation:line-scale 1s cubic-bezier(0.2, 0.68, 0.18, 1.08) 0.5s infinite; -webkit-animation: line-scale 1s 0.5s infinite cubic-bezier(.2, .68, .18, 1.08);
+}
+.line-scale > div {
+	margin: 2px; border-radius: 2px; width: 4px; height: 35px; display: inline-block; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.line-scale-party > div:nth-child(1) {
+	animation-duration: 1.26s; animation-delay: 0.77s; -webkit-animation-duration: 1.26s; -webkit-animation-delay: 0.77s;
+}
+.line-scale-party > div:nth-child(2) {
+	animation-duration: 0.43s; animation-delay: 0.29s; -webkit-animation-duration: 0.43s; -webkit-animation-delay: 0.29s;
+}
+.line-scale-party > div:nth-child(3) {
+	animation-duration: 1.01s; animation-delay: 0.28s; -webkit-animation-duration: 1.01s; -webkit-animation-delay: 0.28s;
+}
+.line-scale-party > div:nth-child(4) {
+	animation-duration: 0.73s; animation-delay: 0.74s; -webkit-animation-duration: 0.73s; -webkit-animation-delay: 0.74s;
+}
+.line-scale-party > div {
+	margin: 2px; border-radius: 2px; width: 4px; height: 35px; display: inline-block; animation-name: line-scale-party; animation-delay: 0s; animation-iteration-count: infinite; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both; -webkit-animation-delay: 0; -webkit-animation-name: line-scale-party; -webkit-animation-iteration-count: infinite;
+}
+.line-scale-pulse-out > div {
+	margin: 2px; border-radius: 2px; animation:line-scale-pulse-out 0.9s cubic-bezier(0.85, 0.25, 0.37, 0.85) infinite; width: 4px; height: 35px; display: inline-block; background-color: rgb(255, 255, 255); -webkit-animation: line-scale-pulse-out 0.9s 0s infinite cubic-bezier(.85, .25, .37, .85); -webkit-animation-fill-mode: both;
+}
+.line-scale-pulse-out > div:nth-child(2) {
+	animation-delay: 0.2s !important; -webkit-animation-delay: 0.2s;
+}
+.line-scale-pulse-out > div:nth-child(4) {
+	animation-delay: 0.2s !important; -webkit-animation-delay: 0.2s;
+}
+.line-scale-pulse-out > div:nth-child(1) {
+	animation-delay: 0.4s !important; -webkit-animation-delay: 0.4s;
+}
+.line-scale-pulse-out > div:nth-child(5) {
+	animation-delay: 0.4s !important; -webkit-animation-delay: 0.4s;
+}
+.line-scale-pulse-out-rapid > div {
+	margin: 2px; border-radius: 2px; animation:line-scale-pulse-out-rapid 0.9s cubic-bezier(0.11, 0.49, 0.38, 0.78) infinite; width: 4px; height: 35px; display: inline-block; background-color: rgb(255, 255, 255); -webkit-animation: line-scale-pulse-out-rapid 0.9s 0s infinite cubic-bezier(.11, .49, .38, .78); -webkit-animation-fill-mode: both;
+}
+.line-scale-pulse-out-rapid > div:nth-child(2) {
+	animation-delay: 0.25s !important; -webkit-animation-delay: 0.25s;
+}
+.line-scale-pulse-out-rapid > div:nth-child(4) {
+	animation-delay: 0.25s !important; -webkit-animation-delay: 0.25s;
+}
+.line-scale-pulse-out-rapid > div:nth-child(1) {
+	animation-delay: 0.5s !important; -webkit-animation-delay: 0.5s;
+}
+.line-scale-pulse-out-rapid > div:nth-child(5) {
+	animation-delay: 0.5s !important; -webkit-animation-delay: 0.5s;
+}
+.line-spin-fade-loader {
+	position: relative;
+}
+.line-spin-fade-loader > div:nth-child(1) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.12s infinite; left: 0px; top: 20px; -webkit-animation: line-spin-fade-loader 1.2s 0.12s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(2) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.24s infinite; left: 13.63px; top: 13.63px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -webkit-animation: line-spin-fade-loader 1.2s 0.24s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(3) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.36s infinite; left: 20px; top: 0px; transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: line-spin-fade-loader 1.2s 0.36s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(4) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.48s infinite; left: 13.63px; top: -13.63px; transform: rotate(45deg); -webkit-transform: rotate(45deg); -webkit-animation: line-spin-fade-loader 1.2s 0.48s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(5) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.6s infinite; left: 0px; top: -20px; -webkit-animation: line-spin-fade-loader 1.2s 0.6s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(6) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.72s infinite; left: -13.63px; top: -13.63px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -webkit-animation: line-spin-fade-loader 1.2s 0.72s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(7) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.84s infinite; left: -20px; top: 0px; transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: line-spin-fade-loader 1.2s 0.84s infinite ease-in-out;
+}
+.line-spin-fade-loader > div:nth-child(8) {
+	animation:line-spin-fade-loader 1.2s ease-in-out 0.96s infinite; left: -13.63px; top: 13.63px; transform: rotate(45deg); -webkit-transform: rotate(45deg); -webkit-animation: line-spin-fade-loader 1.2s 0.96s infinite ease-in-out;
+}
+.line-spin-fade-loader > div {
+	margin: 2px; border-radius: 2px; width: 5px; height: 15px; position: absolute; animation-fill-mode: both; background-color: rgb(255, 255, 255); -webkit-animation-fill-mode: both;
+}
+.triangle-skew-spin > div {
+	animation:triangle-skew-spin 3s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; width: 0px; height: 0px; border-right-color: transparent; border-bottom-color: rgb(255, 255, 255); border-left-color: transparent; border-right-width: 20px; border-bottom-width: 20px; border-left-width: 20px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; -webkit-animation: triangle-skew-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite; -webkit-animation-fill-mode: both;
+}
+.square-spin > div {
+	background: rgb(255, 255, 255); border: 1px solid red; animation:square-spin 3s cubic-bezier(0.09, 0.57, 0.49, 0.9) infinite; border-image: none; width: 50px; height: 50px; -webkit-animation: square-spin 3s 0s cubic-bezier(.09, .57, .49, .9) infinite; -webkit-animation-fill-mode: both;
+}
+.pacman {
+	position: relative;
+}
+.pacman > div:nth-child(2) {
+	animation:pacman-balls 1s linear infinite; -webkit-animation: pacman-balls 1s 0s infinite linear;
+}
+.pacman > div:nth-child(3) {
+	animation:pacman-balls 1s linear 0.33s infinite; -webkit-animation: pacman-balls 1s 0.33s infinite linear;
+}
+.pacman > div:nth-child(4) {
+	animation:pacman-balls 1s linear 0.66s infinite; -webkit-animation: pacman-balls 1s 0.66s infinite linear;
+}
+.pacman > div:nth-child(5) {
+	animation:pacman-balls 1s linear 0.99s infinite; -webkit-animation: pacman-balls 1s 0.99s infinite linear;
+}
+.pacman > div:first-of-type {
+	border-width: 25px; border-style: solid; border-color: rgb(255, 255, 255) transparent rgb(255, 255, 255) rgb(255, 255, 255); border-radius: 25px; animation:rotate_pacman_half_up 0.5s infinite; width: 0px; height: 0px; -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
+}
+.pacman > div:nth-child(2) {
+	border-width: 25px; border-style: solid; border-color: rgb(255, 255, 255) transparent rgb(255, 255, 255) rgb(255, 255, 255); border-radius: 25px; animation:rotate_pacman_half_down 0.5s infinite; width: 0px; height: 0px; margin-top: -50px; -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
+}
+.pacman > div:nth-child(3) {
+	margin: 2px; border-radius: 100%; left: 100px; top: 25px; width: 10px; height: 10px; position: absolute; transform: translate(0px, -6.25px); background-color: rgb(255, 255, 255); -webkit-transform: translate(0, -6.25px);
+}
+.pacman > div:nth-child(4) {
+	margin: 2px; border-radius: 100%; left: 100px; top: 25px; width: 10px; height: 10px; position: absolute; transform: translate(0px, -6.25px); background-color: rgb(255, 255, 255); -webkit-transform: translate(0, -6.25px);
+}
+.pacman > div:nth-child(5) {
+	margin: 2px; border-radius: 100%; left: 100px; top: 25px; width: 10px; height: 10px; position: absolute; transform: translate(0px, -6.25px); background-color: rgb(255, 255, 255); -webkit-transform: translate(0, -6.25px);
+}
+.pacman > div:nth-child(6) {
+	margin: 2px; border-radius: 100%; left: 100px; top: 25px; width: 10px; height: 10px; position: absolute; transform: translate(0px, -6.25px); background-color: rgb(255, 255, 255); -webkit-transform: translate(0, -6.25px);
+}
+.cube-transition {
+	position: relative; transform: translate(-25px, -25px); -webkit-transform: translate(-25px, -25px);
+}
+.cube-transition > div {
+	animation:cube-transition 1.6s ease-in-out infinite; left: 0px; top: 0px; width: 10px; height: 10px; position: absolute; background-color: rgb(255, 255, 255); -webkit-animation: cube-transition 1.6s 0s infinite ease-in-out; -webkit-animation-fill-mode: both;
+}
+.cube-transition > div:last-child {
+	animation-delay: -0.8s; -webkit-animation-delay: -0.8s;
+}
+.semi-circle-spin {
+	width: 35px; height: 35px; overflow: hidden; position: relative;
+}
+.semi-circle-spin > div {
+	border-width: 0px; border-radius: 100%; animation:spin-rotate 0.6s linear infinite; width: 100%; height: 100%; position: absolute; background-image: linear-gradient(transparent 0%, transparent 70%, rgb(255, 255, 255) 30%, rgb(255, 255, 255) 100%); -webkit-animation: spin-rotate 0.6s 0s infinite linear;
+}

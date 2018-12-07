@@ -53,3 +53,4 @@ C:\Pro\PortForwarding-\PortControllerClient\PortControllerClient\obj\Debug\PortC
 C:\Pro\PortForwarding-\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.exe
 C:\Pro\PortForwarding-\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.pdb
 C:\Pro\PortForwarding-\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.Forms.updateMessage.resources
+C:\Pro\PortForwarding-\PortControllerClient\PortControllerClient\obj\Debug\PortControllerClient.Forms.WebForm.resources
