@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="imagetoolbar" content="no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<meta name="format-detection" content="telephone=no,email=no,address=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+		<meta name="description" content="网站描述">
+		<meta name="keywords" content="网站关键词">
+		<link href="../css/easyhelper.min.css" rel='stylesheet' type='text/css'>
+		<title>Dialog</title>
+		
+		<script src="es6-shim.min.js"></script>
+		<script src="http://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+		<script src="jquery.transit.min.js"></script>
+		<script src="easyhelper.min.js"></script>
+		<style>
+			.wrapper {
+				text-align: center;
+				margin: 50px auto;
+			}
+			.wrapper button {
+				width: 120px;
+				margin: 0 10px;
+			}
+		</style>
+	</head>
+	<body>
+	    
+		<div class="wrapper">
+			<button class="helper-button-info" id="dialog-info">info 对话框</button>
+			<button class="helper-button-info" id="dialog-success">success 对话框</button>
+			<button class="helper-button-info" id="dialog-warn">warn 对话框</button>
+			<button class="helper-button-info" id="dialog-error">error 对话框</button>
+		</div>
+		<script>
+		    $( "#dialog-info" ).on("click", function () {
+		        Helper.ui.dialogInfo( "对话框标题", "对话框内容" );
+		    })
+		    
+		    $( "#dialog-success" ).on("click", function () {
+		        Helper.ui.dialogSuccess( "对话框标题", "对话框内容" );
+		    })
+
+		    $( "#dialog-warn" ).on("click", function () {
+		        Helper.ui.dialogWarn( "对话框标题", "对话框内容" );
+		    })
+
+		    $( "#dialog-error" ).on("click", function () {
+		        Helper.ui.dialogError( "对话框标题", "对话框内容" );
+		    })
+		</script>
+
+
+
+		<div class="wrapper">
+			<button class="helper-button-info" id="dialog-1">基础对话框</button>
+			<button class="helper-button-info" id="dialog-2">全屏对话框</button>
+			<button class="helper-button-info" id="dialog-3">可拖动对话框</button>
+			<button class="helper-button-info" id="dialog-4">暗黑模式对话框</button>
+		</div>
+		<script>
+		    $( "#dialog-1" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容"
+		        });
+		    })
+		    $( "#dialog-2" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            fullscreen: true
+		        });
+		    })
+		    $( "#dialog-3" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            draggable: true
+		        });
+		    })
+		    $( "#dialog-4" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            darkMode: true
+		        });
+		    })
+		</script>
+
+
+
+		<div class="wrapper">
+			<button class="helper-button-info" id="dialog-5">设置宽度</button>
+			<button class="helper-button-info" id="dialog-6">隐藏按钮</button>
+			<button class="helper-button-info" id="dialog-7">设置按钮文字</button>
+			<button class="helper-button-info" id="dialog-8">按钮事件</button>
+		</div>
+		<script>
+			$( "#dialog-5" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            width: 1000
+		        });
+		    })
+		    $( "#dialog-6" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            showButton: false
+		        });
+		    })
+		    $( "#dialog-7" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            yesText: "我要确定",
+		            noText: "我要取消"
+		        });
+		    })
+		    $( "#dialog-8" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            yesCallback: function () {
+		                alert( "确定" );
+		            },
+		            noCallback: function () {
+		                alert( "取消" );
+		            }
+		        });
+		    })
+		</script>
+
+
+
+		<div class="wrapper">
+			<button class="helper-button-info" id="dialog-9">自动关闭</button>
+			<button class="helper-button-info" id="dialog-10">嵌套 iframe</button>
+			<button class="helper-button-info" id="dialog-11">内容背景色</button>
+			<button class="helper-button-info" id="dialog-12">隐藏遮罩层</button>
+		</div>
+		<script>
+		    $( "#dialog-9" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            autoClose: 5000
+		        });
+		    })
+		    $( "#dialog-10" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "嵌入 iframe",
+		            width: 1200,
+		            contentHeight: 500,
+		            contentScroll: false,
+		            iframe: "http://www.baidu.com/"
+		        });
+		    })
+		    $( "#dialog-11" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            contentBgColor: "#f3f3f3"
+		        });
+		    })
+		    $( "#dialog-12" ).on("click", function () {
+		        Helper.ui.dialog({
+		            title: "对话框标题",
+		            content: "对话框内容",
+		            mask: false
+		        });
+		    })
+		</script>
+
+	</body>
+</html>

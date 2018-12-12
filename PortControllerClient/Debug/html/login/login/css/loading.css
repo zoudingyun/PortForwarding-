@@ -1,0 +1,25 @@
+/*loading*/
+.loadingGif{
+	width: 100%;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    z-index: 99999;
+    display: none;
+	/* display: table-cell; */
+    vertical-align: middle;
+    text-align: center;
+}
+.loadingGif img{
+	display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+img {
+  vertical-align: middle;
+}

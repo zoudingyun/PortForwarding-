@@ -14,12 +14,16 @@ namespace PortControllerClient.Forms
 
         public String user = "";
         public String pwd = "";
+        public String userName = "";
+        public String host = "http://127.0.0.1:8848";
 
 
         public WebForm()
         {
             InitializeComponent();
-            webBrowser1.Navigate("http://127.0.0.1:8848/login/cpts_174_ddb/index.html");
+            //webBrowser1.Navigate("file:///C:/Pro/PortForwarding-/PortControllerClient/Debug/html/login/login/index.html");
+            //webBrowser1.Navigate("https://ie.icoa.cn/");
+            webBrowser1.Navigate(host+"/login/index.html");
             webBrowser1.ObjectForScripting = this;
         }
 
@@ -83,12 +87,18 @@ namespace PortControllerClient.Forms
             this.Show();
         }
 
-        public void saveUser()
+        public void saveUserMessage(String username)
         {
             //MessageBox.Show("hhh");
             user = webBrowser1.Document.GetElementById("username").GetAttribute("value");
-            pwd = webBrowser1.Document.GetElementById("pwd").GetAttribute("value");
-            MessageBox.Show(user + pwd);
+            pwd = webBrowser1.Document.GetElementById("password").GetAttribute("value");
+            userName = username;
+            webBrowser1.Navigate(host + "/zwtp_1_dj/index.html");
+            //MessageBox.Show(userName);
+        }
+        public void saveUser()
+        {
+            MessageBox.Show(userName);
         }
     }
 }

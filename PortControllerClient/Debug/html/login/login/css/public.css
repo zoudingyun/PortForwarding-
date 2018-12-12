@@ -1,0 +1,9 @@
+.wrapper {
+	text-align: center;
+	margin: 50px auto;
+}
+
+.wrapper button {
+	width: 120px;
+	margin: 0 10px;
+}

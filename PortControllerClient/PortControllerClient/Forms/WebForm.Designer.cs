@@ -51,7 +51,7 @@
             this.small.BackColor = System.Drawing.Color.Transparent;
             this.small.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.small.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.small.Location = new System.Drawing.Point(1030, 4);
+            this.small.Location = new System.Drawing.Point(1060, 4);
             this.small.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.small.Name = "small";
             this.small.Size = new System.Drawing.Size(20, 19);
@@ -65,7 +65,7 @@
             this.exit.BackColor = System.Drawing.Color.Transparent;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exit.Location = new System.Drawing.Point(1062, 4);
+            this.exit.Location = new System.Drawing.Point(1086, 4);
             this.exit.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.exit.Name = "exit";
             this.exit.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
