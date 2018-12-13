@@ -43,7 +43,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(1113, 647);
+            this.webBrowser1.Size = new System.Drawing.Size(1051, 590);
             this.webBrowser1.TabIndex = 0;
             // 
             // small
@@ -51,7 +51,7 @@
             this.small.BackColor = System.Drawing.Color.Transparent;
             this.small.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.small.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.small.Location = new System.Drawing.Point(1060, 4);
+            this.small.Location = new System.Drawing.Point(1001, 4);
             this.small.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.small.Name = "small";
             this.small.Size = new System.Drawing.Size(20, 19);
@@ -65,7 +65,7 @@
             this.exit.BackColor = System.Drawing.Color.Transparent;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.exit.Location = new System.Drawing.Point(1086, 4);
+            this.exit.Location = new System.Drawing.Point(1027, 4);
             this.exit.Margin = new System.Windows.Forms.Padding(8, 4, 4, 4);
             this.exit.Name = "exit";
             this.exit.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
@@ -86,7 +86,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 673);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(1051, 618);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.small);
             this.Controls.Add(this.webBrowser1);

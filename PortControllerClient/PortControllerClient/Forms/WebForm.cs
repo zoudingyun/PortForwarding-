@@ -15,6 +15,7 @@ namespace PortControllerClient.Forms
         public String user = "";
         public String pwd = "";
         public String userName = "";
+        public String inherit = "";
         public String host = "http://127.0.0.1:8848";
 
 
@@ -87,18 +88,24 @@ namespace PortControllerClient.Forms
             this.Show();
         }
 
-        public void saveUserMessage(String username)
+        public void saveUserMessage(String username,String group)
         {
             //MessageBox.Show("hhh");
             user = webBrowser1.Document.GetElementById("username").GetAttribute("value");
             pwd = webBrowser1.Document.GetElementById("password").GetAttribute("value");
+            inherit = group;
             userName = username;
-            webBrowser1.Navigate(host + "/zwtp_1_dj/index.html");
+            webBrowser1.Navigate(host + "/login/main.html"+ urlMessage());
             //MessageBox.Show(userName);
         }
         public void saveUser()
         {
             MessageBox.Show(userName);
+        }
+
+        public String urlMessage()
+        {
+            return "?userName=" + userName + "&inherit=" + inherit + "&usr=" + user + "&pwd=" + pwd;
         }
     }
 }

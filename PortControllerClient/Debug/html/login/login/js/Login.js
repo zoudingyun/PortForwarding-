@@ -1,7 +1,7 @@
 
 var ret;
-function saveUserMessage(userName){
-		window.external.saveUserMessage(userName);
+function saveUserMessage(userName,inherit){
+		window.external.saveUserMessage(userName,inherit);
 	}
 
 
@@ -35,7 +35,7 @@ function login(){
 						});
 					}else{
 						//ret.data.userName
-						saveUserMessage(ret.data.userName);
+						saveUserMessage(ret.data.userName,ret.data.inherit);
 					}
 
 					
