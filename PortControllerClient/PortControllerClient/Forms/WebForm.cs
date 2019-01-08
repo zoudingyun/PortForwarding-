@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using PortControllerClient.Forms.pojo;
 
 namespace PortControllerClient.Forms
 {
@@ -16,7 +18,7 @@ namespace PortControllerClient.Forms
         public String pwd = "";
         public String userName = "";
         public String inherit = "";
-        public String host = "http://127.0.0.1:8848";
+        public String host = "http://127.0.0.1:8849";
 
 
         public WebForm()
@@ -106,6 +108,20 @@ namespace PortControllerClient.Forms
         public String urlMessage()
         {
             return "?userName=" + userName + "&inherit=" + inherit + "&usr=" + user + "&pwd=" + pwd;
+        }
+
+        public String startPorts(String confStr)
+        {
+            try
+            {
+                List<PortConf> portConf = JsonConvert.DeserializeObject<List<PortConf>>(confStr);
+                int a = 0;
+                return "true";
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return ex.ToString();
+            }
         }
     }
 }

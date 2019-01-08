@@ -1,7 +1,11 @@
 
 var ret;
 function saveUserMessage(userName,inherit){
+	try{
 		window.external.saveUserMessage(userName,inherit);
+		}catch(err){
+			
+		}
 	}
 
 

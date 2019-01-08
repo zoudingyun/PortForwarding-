@@ -12,53 +12,52 @@
 		<script src="js/lib/bootstrap-select/js/bootstrap-select.min.js"></script>
 		<script src="js/lib/bootstrap-select/js/i18n/defaults-zh_CN.js"></script>
 		<script src="js/lib/bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/PublicVariable.js"></script>
 		<script src="js/main.js" ></script>
 		<title>主界面</title>
 	</head>	
 <body style="background-image:url(images/black-and-white-blueprint-blur-716661.jpg); background-size: cover;color: #FFFFFF;font-family: "微软雅黑";">
 	<div id="message" style="margin-left: 10px;">呵呵</div>
 	
-<table data-toggle="table" >
+<table data-toggle="table" class="table table-hover" id="list" >
   <thead>
 	<tr>
-          <th>转发/穿网</th>
-		  <th>代理地址</th>
-		  <th>代理端口</th>
-		  <th>目的地址/账号</th>
-		  <th>目的端口/密码</th>
+		  <th data-field="action">编辑</th>
+		  <th data-field="id">序号</th>
+          <th data-field="forwardPassNet">穿网</th>
+		  <th data-field="agentAdd" >代理地址</th>
+		  <th data-field="agentPort">代理端口</th>
+		  <th data-field="targetAdd">目的地址/账号</th>
+		  <th data-field="targetPort">目的端口</th>
+		  <th data-field="targetPwd">目的密码</th>
 	</tr>
   </thead>
 
   <tbody>
-	<tr>
+	<!-- <tr>
+	  <td>
+		  <input class="btn btn-danger" style="margin: 5px;" type="submit" onclick="login();" value="×" >
+	  </td>
 	  <td>
 		  <select id="forwardPassNet-0" class="selectpicker">
 			<option>转发直连</option>
 			<option>内网穿透</option>
 		  </select>
 	  </td>
-	  <td><input id="agentAdd-0" class="textInput"></td>
-	  <td><input id="agentPort-0"></td>
-	  <td><input id="targetAdd-0"></td>
-	  <td><input id="targetPort-0"></td>
-	</tr>
-	<tr>
-	<td>
-		<select id="forwardPassNet-1" class="selectpicker">
-			<option>转发直连</option>
-			<option>内网穿透</option>
-		</select>
-	</td>
-	<td><input id="agentAdd-0"></td>
-	<td><input id="agentPort-0"></td>
-	<td><input id="targetAdd-0"></td>
-	<td><input id="targetPort-0"></td>
-	</tr>
+	  <td><input id="agentAdd-0" class="form-control"></td>
+	  <td><input id="agentPort-0" class="form-control"></td>
+	  <td><input id="targetAdd-0" class="form-control"></td>
+	  <td><input id="targetPort-0" class="form-control"></td>
+	</tr> -->
+
+	
 	
 	
   </tbody>
+	
 </table>
-
+<input class="btn btn-success" style="float: right;margin: 5px;" type="submit" onclick="savePortInfo();" value="启动" >
+<input class="btn btn-info" style="float: left;margin: 5px;" type="submit" onclick="addConf();" value="＋" >
 <div>
 
 </body>
